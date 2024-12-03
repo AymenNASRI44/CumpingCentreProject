@@ -25,7 +25,7 @@
                         <img src="{{ asset('uploads/photos/' ~ lieuCamping.photo) }}" alt="{{ lieuCamping.nom }}" class="img-fluid">
                     </div>
                 {% endif %}
-                <a href="{{ path('app_reservation') }}" class="btn btn-primary">reserver Maintenant</a>
+                <a href="{{ path('app_reservation',{ id: lieuCamping.id }) }}" class="btn btn-primary">reserver Maintenant</a>
                 <!-- Contenu de la description -->
                 <div class="post-content">
                     <h2>Description</h2>

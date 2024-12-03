@@ -1,25 +1,13 @@
-{# templates/reservation/new.html.twig #}
-
 {% extends 'base.html.twig' %}
 
-{% block title %}Faire une réservation{% endblock %}
+{% block title %}Réserver un lieu{% endblock %}
 
 {% block body %}
-    <h1>Faire une réservation</h1>
-
-    {# Afficher le message flash de succès s'il existe #}
-    {% if app.session.flashbag.has('success') %}
-        <div class="alert alert-success">
-            {{ app.session.flashbag.get('success')[0] }}
-        </div>
-    {% endif %}
-
-    {# Afficher le formulaire #}
+    <h1>Réserver : {{ lieu.nom }}</h1>
     {{ form_start(form) }}
         {{ form_row(form.date_d) }}
         {{ form_row(form.date_f) }}
-        {{ form_row(form.lieu_camping) }}
-        {{ form_row(form.user) }}
-        <button class="btn btn-primary" type="submit">Réserver</button>
+        {{ form_row(form.nombre_personnes) }}
+        {{ form_row(form.submit) }}
     {{ form_end(form) }}
 {% endblock %}

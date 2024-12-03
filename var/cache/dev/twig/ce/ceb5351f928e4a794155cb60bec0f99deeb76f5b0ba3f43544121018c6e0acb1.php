@@ -159,7 +159,7 @@ class __TwigTemplate_93ef23920dfb9c7702447aaae9fd1206055077b56f06a57668fc5515aed
         }
         // line 28
         yield "                <a href=\"";
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation");
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieuCamping"]) || array_key_exists("lieuCamping", $context) ? $context["lieuCamping"] : (function () { throw new RuntimeError('Variable "lieuCamping" does not exist.', 28, $this->source); })()), "id", [], "any", false, false, false, 28)]), "html", null, true);
         yield "\" class=\"btn btn-primary\">reserver Maintenant</a>
                 <!-- Contenu de la description -->
                 <div class=\"post-content\">
@@ -243,7 +243,7 @@ class __TwigTemplate_93ef23920dfb9c7702447aaae9fd1206055077b56f06a57668fc5515aed
                         <img src=\"{{ asset('uploads/photos/' ~ lieuCamping.photo) }}\" alt=\"{{ lieuCamping.nom }}\" class=\"img-fluid\">
                     </div>
                 {% endif %}
-                <a href=\"{{ path('app_reservation') }}\" class=\"btn btn-primary\">reserver Maintenant</a>
+                <a href=\"{{ path('app_reservation',{ id: lieuCamping.id }) }}\" class=\"btn btn-primary\">reserver Maintenant</a>
                 <!-- Contenu de la description -->
                 <div class=\"post-content\">
                     <h2>Description</h2>

@@ -184,9 +184,16 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "capacite", [], "any", false, false, false, 38), "html", null, true);
                 yield " personnes
                         </p>
+                        <p>
+                            <span class=\"icon-person\"></span>
+                            <p>Capacité disponible : ";
+                // line 42
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "capaciteDisponible", [], "any", false, false, false, 42), "html", null, true);
+                yield "</p>
+                        </p>
                         <p>Région : ";
-                // line 40
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "regionId", [], "any", false, false, false, 40), "getNomRegion", [], "method", false, false, false, 40), "html", null, true);
+                // line 44
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "regionId", [], "any", false, false, false, 44), "getNomRegion", [], "method", false, false, false, 44), "html", null, true);
                 yield "</p>
                     </div>
                 </div>
@@ -195,14 +202,14 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['lieu'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 44
+            // line 48
             yield "        ";
         } else {
-            // line 45
+            // line 49
             yield "            <p>Aucun lieu de camping n'a été trouvé.</p>
         ";
         }
-        // line 47
+        // line 51
         yield "    </div>
 ";
         
@@ -214,7 +221,7 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
         yield from [];
     }
 
-    // line 50
+    // line 54
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -227,7 +234,7 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 51
+        // line 55
         yield "<!-- Pied de page -->
 ";
         
@@ -260,7 +267,7 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
      */
     public function getDebugInfo(): array
     {
-        return array (  231 => 51,  218 => 50,  206 => 47,  202 => 45,  199 => 44,  189 => 40,  184 => 38,  177 => 34,  166 => 25,  158 => 23,  156 => 22,  150 => 19,  146 => 18,  140 => 14,  135 => 13,  133 => 12,  128 => 9,  115 => 8,  89 => 4,  66 => 3,  43 => 1,);
+        return array (  238 => 55,  225 => 54,  213 => 51,  209 => 49,  206 => 48,  196 => 44,  191 => 42,  184 => 38,  177 => 34,  166 => 25,  158 => 23,  156 => 22,  150 => 19,  146 => 18,  140 => 14,  135 => 13,  133 => 12,  128 => 9,  115 => 8,  89 => 4,  66 => 3,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -303,6 +310,10 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
                         <p>
                             <span class=\"icon-person\"></span>
                             Capacité : {{ lieu.capacite }} personnes
+                        </p>
+                        <p>
+                            <span class=\"icon-person\"></span>
+                            <p>Capacité disponible : {{ lieu.capaciteDisponible }}</p>
                         </p>
                         <p>Région : {{ lieu.regionId.getNomRegion() }}</p>
                     </div>

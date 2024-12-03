@@ -43,6 +43,9 @@ class Lieucamping
     #[ORM\OneToMany(mappedBy: 'lieu_camping', targetEntity: Reservation::class)]
     private Collection $reservations;
 
+    #[ORM\Column]
+    private ?int $CapaciteDisponible = null;
+
     public function __construct()
     {
         $this->avis = new ArrayCollection();
@@ -190,16 +193,6 @@ class Lieucamping
 
         return $this;
     }
-
-    public function removeReservation(Reservation $reservation): static
-    {
-        if ($this->reservations->removeElement($reservation)) {
-            // set the owning side to null (unless already changed)
-            if ($reservation->getLieuCamping() === $this) {
-                $reservation->setLieuCamping(null);
-            }
-        }
-
-        return $this;
-    }
+   
+   
 }

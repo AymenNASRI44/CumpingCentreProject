@@ -37,7 +37,7 @@ class __TwigTemplate_acb222c35e8815d3cb8db462720df9a9c5fe87af3a75325058bd7e680c5
 
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
-        // line 3
+        // line 1
         return "base.html.twig";
     }
 
@@ -50,7 +50,7 @@ class __TwigTemplate_acb222c35e8815d3cb8db462720df9a9c5fe87af3a75325058bd7e680c5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "reservation/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "reservation/index.html.twig", 3);
+        $this->parent = $this->loadTemplate("base.html.twig", "reservation/index.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -60,7 +60,7 @@ class __TwigTemplate_acb222c35e8815d3cb8db462720df9a9c5fe87af3a75325058bd7e680c5
 
     }
 
-    // line 5
+    // line 3
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -73,7 +73,7 @@ class __TwigTemplate_acb222c35e8815d3cb8db462720df9a9c5fe87af3a75325058bd7e680c5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Réserver un centre de camping";
+        yield "Réserver un lieu";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -83,7 +83,7 @@ class __TwigTemplate_acb222c35e8815d3cb8db462720df9a9c5fe87af3a75325058bd7e680c5
         yield from [];
     }
 
-    // line 7
+    // line 5
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,67 +96,34 @@ class __TwigTemplate_acb222c35e8815d3cb8db462720df9a9c5fe87af3a75325058bd7e680c5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 6
+        yield "    <h1>Réserver : ";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieu"]) || array_key_exists("lieu", $context) ? $context["lieu"] : (function () { throw new RuntimeError('Variable "lieu" does not exist.', 6, $this->source); })()), "nom", [], "any", false, false, false, 6), "html", null, true);
+        yield "</h1>
+    ";
+        // line 7
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form_start');
+        yield "
+        ";
         // line 8
-        yield "    <h1>Faire une réservation</h1>
-
-    ";
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), "date_d", [], "any", false, false, false, 8), 'row');
+        yield "
+        ";
+        // line 9
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "date_f", [], "any", false, false, false, 9), 'row');
+        yield "
+        ";
+        // line 10
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), "nombre_personnes", [], "any", false, false, false, 10), 'row');
+        yield "
+        ";
         // line 11
-        yield "    ";
-        if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "session", [], "any", false, false, false, 11), "flashbag", [], "any", false, false, false, 11), "has", ["success"], "method", false, false, false, 11)) {
-            // line 12
-            yield "        <div class=\"alert alert-success\">
-            ";
-            // line 13
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "session", [], "any", false, false, false, 13), "flashbag", [], "any", false, false, false, 13), "get", ["success"], "method", false, false, false, 13), 0, [], "array", false, false, false, 13), "html", null, true);
-            yield "
-        </div>
-    ";
-        }
-        // line 16
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "submit", [], "any", false, false, false, 11), 'row');
         yield "
     ";
-        // line 18
-        yield "    ";
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["reservationForm"]) || array_key_exists("reservationForm", $context) ? $context["reservationForm"] : (function () { throw new RuntimeError('Variable "reservationForm" does not exist.', 18, $this->source); })()), 'form_start');
+        // line 12
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_end');
         yield "
-    
-        <div class=\"reservationForm-group\">
-            ";
-        // line 21
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["reservationForm"]) || array_key_exists("reservationForm", $context) ? $context["reservationForm"] : (function () { throw new RuntimeError('Variable "reservationForm" does not exist.', 21, $this->source); })()), "date_d", [], "any", false, false, false, 21), 'row', ["label" => "Date de début"]);
-        yield "
-        </div>
-        
-        <div class=\"reservationForm-group\">
-            ";
-        // line 25
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["reservationForm"]) || array_key_exists("reservationForm", $context) ? $context["reservationForm"] : (function () { throw new RuntimeError('Variable "reservationForm" does not exist.', 25, $this->source); })()), "date_f", [], "any", false, false, false, 25), 'row', ["label" => "Date de fin"]);
-        yield "
-        </div>
-        
-        <div class=\"reservationForm-group\">
-            ";
-        // line 29
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["reservationForm"]) || array_key_exists("reservationForm", $context) ? $context["reservationForm"] : (function () { throw new RuntimeError('Variable "reservationForm" does not exist.', 29, $this->source); })()), "lieu_camping", [], "any", false, false, false, 29), 'row', ["label" => "Lieu de camping"]);
-        yield "
-        </div>
-
-        <div class=\"reservationForm-group\">
-            ";
-        // line 33
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["reservationForm"]) || array_key_exists("reservationForm", $context) ? $context["reservationForm"] : (function () { throw new RuntimeError('Variable "reservationForm" does not exist.', 33, $this->source); })()), "user", [], "any", false, false, false, 33), 'row', ["label" => "Utilisateur"]);
-        yield "
-        </div>
-
-        <div class=\"reservationForm-group\">
-            <button class=\"btn btn-primary\" type=\"submit\">Réserver</button>
-        </div>
-
-    ";
-        // line 40
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["reservationForm"]) || array_key_exists("reservationForm", $context) ? $context["reservationForm"] : (function () { throw new RuntimeError('Variable "reservationForm" does not exist.', 40, $this->source); })()), 'form_end');
-        yield "
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -188,52 +155,23 @@ class __TwigTemplate_acb222c35e8815d3cb8db462720df9a9c5fe87af3a75325058bd7e680c5
      */
     public function getDebugInfo(): array
     {
-        return array (  157 => 40,  147 => 33,  140 => 29,  133 => 25,  126 => 21,  119 => 18,  116 => 16,  110 => 13,  107 => 12,  104 => 11,  100 => 8,  87 => 7,  64 => 5,  41 => 3,);
+        return array (  125 => 12,  121 => 11,  117 => 10,  113 => 9,  109 => 8,  105 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{# templates/reservation/new.html.twig #}
+        return new Source("{% extends 'base.html.twig' %}
 
-{% extends 'base.html.twig' %}
-
-{% block title %}Réserver un centre de camping{% endblock %}
+{% block title %}Réserver un lieu{% endblock %}
 
 {% block body %}
-    <h1>Faire une réservation</h1>
-
-    {# Vérifier si le formulaire a été soumis et afficher un message de succès #}
-    {% if app.session.flashbag.has('success') %}
-        <div class=\"alert alert-success\">
-            {{ app.session.flashbag.get('success')[0] }}
-        </div>
-    {% endif %}
-
-    {# Afficher le formulaire #}
-    {{ form_start(reservationForm) }}
-    
-        <div class=\"reservationForm-group\">
-            {{ form_row(reservationForm.date_d, { 'label': 'Date de début' }) }}
-        </div>
-        
-        <div class=\"reservationForm-group\">
-            {{ form_row(reservationForm.date_f, { 'label': 'Date de fin' }) }}
-        </div>
-        
-        <div class=\"reservationForm-group\">
-            {{ form_row(reservationForm.lieu_camping, { 'label': 'Lieu de camping' }) }}
-        </div>
-
-        <div class=\"reservationForm-group\">
-            {{ form_row(reservationForm.user, { 'label': 'Utilisateur' }) }}
-        </div>
-
-        <div class=\"reservationForm-group\">
-            <button class=\"btn btn-primary\" type=\"submit\">Réserver</button>
-        </div>
-
-    {{ form_end(reservationForm) }}
-
+    <h1>Réserver : {{ lieu.nom }}</h1>
+    {{ form_start(form) }}
+        {{ form_row(form.date_d) }}
+        {{ form_row(form.date_f) }}
+        {{ form_row(form.nombre_personnes) }}
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
 {% endblock %}
 ", "reservation/index.html.twig", "C:\\xampp\\htdocs\\projetC\\templates\\reservation\\index.html.twig");
     }
