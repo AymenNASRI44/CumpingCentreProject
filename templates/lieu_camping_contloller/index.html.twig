@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Lieux de Camping{% endblock %}
+{%block stylesheets%}<link rel="stylesheet" href="{{ asset('lieu/stylelieu.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <h1 >Liste des Lieux de Camping</h1>
+
+    <div class="lieux-container">
+        {% if lieuxCamping is not empty %}
+            {% for lieu in lieuxCamping %}
+                <div class="lieu-card">
+                    <!-- Section gauche : Image et nom -->
+                    <div class="lieu-left">
+                        <h2>
+                            <a href="{{ path('app_lieu_camping_detail', {'id': lieu.id}) }}">   
+                                {{ lieu.nom }}
+                            </a>
+                        </h2>
+                        {% if lieu.photo %}
+                            <img src="{{ asset('uploads/photos/' ~ lieu.photo) }}" alt="{{ lieu.nom }}">
+                        {% endif %}
+                     
+                    </div>
+
+                    <!-- Section droite : Description et informations -->
+                    <div class="lieu-right">
+                        
+
+                        <p>
+                            <span class="icon-map"></span>
+                            Coordonnées : {{ lieu.coordonner }}
+                        </p>
+                        <p>
+                            <span class="icon-person"></span>
+                            Capacité : {{ lieu.capacite }} personnes
+                        </p>
+                        <p>Région : {{ lieu.regionId.getNomRegion() }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Aucun lieu de camping n'a été trouvé.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+<!-- Pied de page -->
+{% endblock %}
