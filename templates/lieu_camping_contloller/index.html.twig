@@ -1,5 +1,5 @@
-{% extends 'base.html.twig' %}
 
+{% extends 'home/index.html.twig' %}
 {% block title %}Liste des Lieux de Camping{% endblock %}
 {%block stylesheets%}<link rel="stylesheet" href="{{ asset('lieu/stylelieu.css') }}">
 {% endblock %}
@@ -7,7 +7,6 @@
 
 {% block body %}
     <h1 >Liste des Lieux de Camping</h1>
-
     <div class="lieux-container">
         {% if lieuxCamping is not empty %}
             {% for lieu in lieuxCamping %}
@@ -37,12 +36,9 @@
                             <span class="icon-person"></span>
                             Capacité : {{ lieu.capacite }} personnes
                         </p>
-                        <p>
-                            <span class="icon-person"></span>
-                            <p>Capacité disponible : {{ lieu.capaciteDisponible }}</p>
-                        </p>
                         <p>Région : {{ lieu.regionId.getNomRegion() }}</p>
                     </div>
+                    place restante : {{lieu.PlacesRestantes }}
                 </div>
             {% endfor %}
         {% else %}

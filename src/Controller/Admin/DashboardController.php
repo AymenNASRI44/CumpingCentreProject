@@ -11,12 +11,15 @@ use App\Entity\User;
 use App\Entity\Region;
 use App\Entity\Lieucamping;
 use App\Controller\Admin\UserCrudController;
+use App\Entity\Reservation;
+
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-        //return parent::index();
+        //comment faire des statistiques pour les nombre des utilisateurs
+         
 
     
          $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
@@ -43,9 +46,16 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('les regions  ', 'fas fa-list', Region::class);
-        yield MenuItem::linkToCrud('Lieu de camping ', 'fas fa-list',Lieucamping ::class);
+        yield MenuItem::linkToUrl('Retour au site', 'fas fa-home', '/');
+        yield MenuItem::linkToCrud('les regions  ', 'fas fa-map', Region::class);
+        yield MenuItem::linkToCrud('Lieu de camping ', 'fas fa-campground ',Lieucamping ::class);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
+        yield MenuItem::linkToRoute(' Statistics', 'fa fa-chart-line', 'admin_statistics');
+        
+        //afficher les reservation 
+        
+        
+
         //afficher seullemnent la liste les utilisateurs 
         
 

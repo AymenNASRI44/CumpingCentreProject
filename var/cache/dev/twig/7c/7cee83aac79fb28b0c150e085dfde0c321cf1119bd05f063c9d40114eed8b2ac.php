@@ -130,7 +130,10 @@ class __TwigTemplate_96949eb47aa86f402d65fd3970634a7448e1c8d81f89f95809a43e3c174
                 <div class=\"text-center\">
                     <h1 class=\"mx-auto my-0 text-uppercase\">Cumping Time </h1>
                     <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Lets descoring our Tunisia  .</h2>
-                    <a class=\"btn btn-primary\" href=\"#about\">Get Started</a>
+                    <a class=\"btn btn-primary\" href=\"";
+        // line 33
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieu_camping");
+        yield "\">Get Started</a>
                 </div>
             </div>
         </div>
@@ -220,11 +223,8 @@ class __TwigTemplate_96949eb47aa86f402d65fd3970634a7448e1c8d81f89f95809a43e3c174
             
             
         </div>
-     <!--lien vers les lieu de camping -->
-        <a href=\"";
-        // line 93
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieu_camping");
-        yield "\" class=\"btn btn-primary\">Liste des Lieux de Camping</a>
+  
+        
     </section>
     <!-- Signup-->
     <section class=\"signup-section\" id=\"signup\">
@@ -385,7 +385,7 @@ class __TwigTemplate_96949eb47aa86f402d65fd3970634a7448e1c8d81f89f95809a43e3c174
      */
     public function getDebugInfo(): array
     {
-        return array (  226 => 93,  216 => 85,  212 => 83,  197 => 77,  186 => 71,  183 => 70,  178 => 69,  176 => 68,  163 => 58,  152 => 50,  120 => 21,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  219 => 85,  215 => 83,  200 => 77,  189 => 71,  186 => 70,  181 => 69,  179 => 68,  166 => 58,  155 => 50,  135 => 33,  120 => 21,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -422,7 +422,7 @@ class __TwigTemplate_96949eb47aa86f402d65fd3970634a7448e1c8d81f89f95809a43e3c174
                 <div class=\"text-center\">
                     <h1 class=\"mx-auto my-0 text-uppercase\">Cumping Time </h1>
                     <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Lets descoring our Tunisia  .</h2>
-                    <a class=\"btn btn-primary\" href=\"#about\">Get Started</a>
+                    <a class=\"btn btn-primary\" href=\"{{ path('app_lieu_camping') }}\">Get Started</a>
                 </div>
             </div>
         </div>
@@ -481,8 +481,8 @@ class __TwigTemplate_96949eb47aa86f402d65fd3970634a7448e1c8d81f89f95809a43e3c174
             
             
         </div>
-     <!--lien vers les lieu de camping -->
-        <a href=\"{{ path('app_lieu_camping') }}\" class=\"btn btn-primary\">Liste des Lieux de Camping</a>
+  
+        
     </section>
     <!-- Signup-->
     <section class=\"signup-section\" id=\"signup\">

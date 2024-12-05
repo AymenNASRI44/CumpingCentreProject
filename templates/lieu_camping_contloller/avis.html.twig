@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un avis{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un avis pour un lieu de camping</h1>
+
+    {{ form_start(form) }}
+       
+        {{ form_row(form.commentaire) }}
+        {{ form_row(form.user) }}
+        {{ form_row(form.id_lieu) }}
+
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    {{ form_end(form) }}
+{% endblock %}

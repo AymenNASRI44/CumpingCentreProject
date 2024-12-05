@@ -14,6 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
+        '/admin/statistics' => [[['_route' => 'admin_statistics', '_controller' => 'App\\Controller\\Admin\\StatisticsController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/lieu' => [
             [['_route' => 'app_lieu_camping', '_controller' => 'App\\Controller\\LieuCampingContlollerController::index'], null, null, null, false, false, null],
@@ -40,8 +41,11 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/lieu/([^/]++)(*:183)'
-                .'|/reservation/([^/]++)(*:212)'
+                .'|/lieu/([^/]++)(?'
+                    .'|(*:186)'
+                    .'|/avis(*:199)'
+                .')'
+                .'|/reservation/([^/]++)(*:229)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -52,8 +56,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        183 => [[['_route' => 'app_lieu_camping_detail', '_controller' => 'App\\Controller\\LieuCampingContlollerController::detail'], ['id'], null, null, false, true, null]],
-        212 => [
+        186 => [[['_route' => 'app_lieu_camping_detail', '_controller' => 'App\\Controller\\LieuCampingContlollerController::detail'], ['id'], null, null, false, true, null]],
+        199 => [[['_route' => 'app_avis', '_controller' => 'App\\Controller\\LieuCampingContlollerController::donnerAvis'], ['id'], null, null, false, false, null]],
+        229 => [
             [['_route' => 'app_reservation', '_controller' => 'App\\Controller\\ReservationController::reservation'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

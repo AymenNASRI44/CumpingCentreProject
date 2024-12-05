@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Détail du Lieu de Camping{% endblock %}
-{%block stylesheets%}<link rel="stylesheet" href="{{ asset('lieu/details.css') }}">
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('lieu/details.css') }}">
 {% endblock %}
-
-
 
 {% block body %}
     <section class="blog-post">
@@ -14,19 +14,23 @@
                 <header class="post-header">
                     <h1 class="post-title">{{ lieuCamping.nom }}</h1>
                     <div class="post-meta">
-                       
                         <span class="post-location"><strong>Coordonnées :</strong> {{ lieuCamping.coordonner }}</span>
                     </div>
                 </header>
 
                 <!-- Image principale du lieu -->
-                {% if lieuCamping.photo %}
-                    <div class="post-image">
-                        <img src="{{ asset('uploads/photos/' ~ lieuCamping.photo) }}" alt="{{ lieuCamping.nom }}" class="img-fluid">
-                    </div>
-                {% endif %}
-                <a href="{{ path('app_reservation',{ id: lieuCamping.id }) }}" class="btn btn-primary">reserver Maintenant</a>
-                <!-- Contenu de la description -->
+                <div class="post-image">
+                    <img src="{{ asset('uploads/photos/' ~ lieuCamping.photo) }}" alt="{{ lieuCamping.nom }}" class="img-fluid">
+                </div>
+
+                <div class="post-meta">
+                    <span class="post-location"><strong>Capacité :</strong> {{ lieuCamping.capacite }} personnes</span>
+                </div>    
+
+                <!-- Bouton Réserver -->
+                <a href="{{ path('app_reservation', { id: lieuCamping.id }) }}" class="btn btn-primary">Réserver Maintenant</a>
+
+                <!-- Description du lieu -->
                 <div class="post-content">
                     <h2>Description</h2>
                     <p>{{ lieuCamping.description | raw }}</p>
@@ -35,7 +39,22 @@
                 <!-- Section footer avec bouton retour -->
                 <footer class="post-footer">
                     <a href="{{ path('app_lieu_camping') }}" class="btn btn-primary">Retour à la liste des lieux</a>
+                    <a href="{{ path('app_avis', { id: lieuCamping.id }) }}" class="btn btn-success">Donner un avis</a>
                 </footer>
+
+                <!-- Affichage des avis -->
+                {% if avis is empty %}
+                    <p>Aucun avis pour ce lieu de camping.</p>
+                {% else %}
+                    <ul class="comment-list">
+                        {% for commentaire in avis %}
+                            <li>
+                                <strong>{{ commentaire.user.nom }}</strong> a écrit le {{ commentaire.date | date('d/m/Y') }} :
+                                <p>{{ commentaire.commentaire }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </article>
         </div>
     </section>

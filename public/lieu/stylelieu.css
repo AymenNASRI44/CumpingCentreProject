@@ -1,68 +1,116 @@
-/* stylelieu.css */
+/* Styles globaux */
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f4f4f9;
 }
+
+
+/* Titre principal */
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+}
+
+
+/* Conteneur principal */
 
 .lieux-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    justify-content: space-around;
+    padding: 20px;
 }
+
+
+/* Carte de chaque lieu */
 
 .lieu-card {
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 800px;
-    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
 }
 
-.lieu-card h2 {
-    margin: 10px 0;
-    color: #333;
+.lieu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
-.lieu-left {
-    flex: 1;
-    padding: 10px;
+
+/* Section gauche */
+
+.lieu-left h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.lieu-left img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.lieu-right {
-    flex: 2;
-    padding: 10px;
-    background-color: #f9f9f9;
-}
-
-.icon-map,
-.icon-person {
-    margin-right: 5px;
-}
-
-.lieu-card p {
-    margin: 5px 0;
-    color: #666;
-}
-
-.lieu-card a {
+.lieu-left a {
     text-decoration: none;
     color: #007bff;
 }
 
-.lieu-card a:hover {
-    text-decoration: underline;
+.lieu-left a:hover {
+    color: #0056b3;
+}
+
+.lieu-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+/* Section droite */
+
+.lieu-right p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.lieu-right span {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Places restantes */
+
+.lieu-card p:last-of-type {
+    font-size: 16px;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 15px;
+}
+
+
+/* Aucun lieu trouvé */
+
+.lieux-container p {
+    color: #999;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/* Pied de page */
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }

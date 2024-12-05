@@ -1,0 +1,134 @@
+{% block head %}
+<!-- Inclure Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+{% endblock head %}
+ 
+
+
+{% block content %}
+    <h1 class="page-title">Statistiques</h1>
+    <a href="{{ path('admin') }}" class="btn btn-primary">
+        <i class="bi bi-house-door"></i> 
+    </a>
+    
+    <div class="charts-container">
+       
+        <div class="chart-wrapper">
+            <h2>Nombre de Réservations par Lieu de Camping</h2>
+            <canvas id="reservationsChart"></canvas>
+        </div>
+
+        <!-- Graphique des utilisateurs par région -->
+        <div class="chart-wrapper">
+            <h2>Nombre d'Utilisateurs par Région</h2>
+            <canvas id="usersChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Graphique des réservations par lieu de camping
+        var ctx1 = document.getElementById('reservationsChart').getContext('2d');
+        var reservationsChart = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: {{ lieuNames|raw }},
+                datasets: [{
+                    label: 'Nombre de Réservations',
+                    data: {{ reservationCounts|raw }},
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.raw + ' réservations';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Graphique des utilisateurs par région
+        var ctx2 = document.getElementById('usersChart').getContext('2d');
+        var usersChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: {{ regions|raw }},
+                datasets: [{
+                    label: 'Nombre d\'Utilisateurs',
+                    data: {{ userCounts|raw }},
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.raw + ' utilisateurs';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <style>
+        .charts-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .chart-wrapper {
+            flex: 1;
+            min-width: 45%;
+            max-width: 600px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-wrapper h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 400px !important;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+    </style>
+   
+
+{% endblock %}

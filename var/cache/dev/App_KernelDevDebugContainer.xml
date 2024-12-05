@@ -20,6 +20,7 @@
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="EasyAdminBundle">EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle</parameter>
+      <parameter key="ChartjsBundle">Symfony\UX\Chartjs\ChartjsBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -65,6 +66,10 @@
       <parameter key="EasyAdminBundle" type="collection">
         <parameter key="path">C:\xampp\htdocs\projetC\vendor\easycorp\easyadmin-bundle\src</parameter>
         <parameter key="namespace">EasyCorp\Bundle\EasyAdminBundle</parameter>
+      </parameter>
+      <parameter key="ChartjsBundle" type="collection">
+        <parameter key="path">C:\xampp\htdocs\projetC\vendor\symfony\ux-chartjs</parameter>
+        <parameter key="namespace">Symfony\UX\Chartjs</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -363,12 +368,27 @@
         <argument type="service" id=".service_locator.wcyNGhy.App\Controller\Admin\RegionCrudController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\StatisticsController" class="App\Controller\Admin\StatisticsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\Admin\StatisticsController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.wcyNGhy.App\Controller\Admin\UserCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\AvisController" class="App\Controller\AvisController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\AvisController"/>
       </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
@@ -441,6 +461,9 @@
     </service>
     <service id="App\Security\AppCustomAuthenticator" class="App\Security\AppCustomAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="router.default"/>
+    </service>
+    <service id="App\Service\PlaceManager" class="App\Service\PlaceManager" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -2019,6 +2042,7 @@
           <argument>C:\xampp\htdocs\projetC\vendor\symfony\security-bundle/translations</argument>
           <argument>C:\xampp\htdocs\projetC\vendor\symfony\monolog-bundle/translations</argument>
           <argument>C:\xampp\htdocs\projetC\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\xampp\htdocs\projetC\vendor\symfony\ux-chartjs/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2037,6 +2061,7 @@
             <argument>C:\xampp\htdocs\projetC\vendor\symfony\security-bundle/translations</argument>
             <argument>C:\xampp\htdocs\projetC\vendor\symfony\monolog-bundle/translations</argument>
             <argument>C:\xampp\htdocs\projetC\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\xampp\htdocs\projetC\vendor\symfony\ux-chartjs/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -6591,6 +6616,7 @@
       <tag name="assets.package" package="easyadmin.assets.package"/>
       <argument type="service" id="request_stack"/>
     </service>
+    <service id="chartjs.builder" class="Symfony\UX\Chartjs\Builder\ChartBuilder"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
@@ -6603,10 +6629,16 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\RegionCrudController" class="App\Controller\Admin\RegionCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\RegionCrudController" class="App\Controller\Admin\RegionCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\RegionCrudController" class="App\Controller\Admin\RegionCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\StatisticsController" class="App\Controller\Admin\StatisticsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\StatisticsController" class="App\Controller\Admin\StatisticsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\StatisticsController" class="App\Controller\Admin\StatisticsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AvisController" class="App\Controller\AvisController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AvisController" class="App\Controller\AvisController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AvisController" class="App\Controller\AvisController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7169,7 +7201,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.OUwpT9v" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..Hh6wSk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\DashboardController::configureUserMenu" type="service_closure" id=".service_locator.q6hA_O0"/>
@@ -7238,6 +7270,7 @@
         <argument key="App\Controller\Admin\UserCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\LieuCampingContlollerController::detail" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\LieuCampingContlollerController::donnerAvis" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\LieuCampingContlollerController::index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\ReservationController::reservation" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -7312,6 +7345,7 @@
         <argument key="App\Controller\Admin\UserCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\LieuCampingContlollerController:detail" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\LieuCampingContlollerController:donnerAvis" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\LieuCampingContlollerController:index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\ReservationController:reservation" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -7732,10 +7766,10 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry">
       <argument>C:/xampp/htdocs/projetC/var/cache/dev</argument>
       <argument type="collection">
-        <argument key="App\Controller\Admin\DashboardController">e35a0ae</argument>
+        <argument key="App\Controller\Admin\DashboardController">788529e</argument>
       </argument>
       <argument type="collection">
-        <argument key="e35a0ae">App\Controller\Admin\DashboardController</argument>
+        <argument key="788529e">App\Controller\Admin\DashboardController</argument>
       </argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry">
@@ -7745,9 +7779,9 @@
         <argument key="App\Controller\Admin\UserCrudController">App\Entity\User</argument>
       </argument>
       <argument type="collection">
-        <argument key="App\Controller\Admin\LieucampingCrudController">c7412e3</argument>
-        <argument key="App\Controller\Admin\RegionCrudController">e7615a5</argument>
-        <argument key="App\Controller\Admin\UserCrudController">8f3c127</argument>
+        <argument key="App\Controller\Admin\LieucampingCrudController">31e60e1</argument>
+        <argument key="App\Controller\Admin\RegionCrudController">55eca7b</argument>
+        <argument key="App\Controller\Admin\UserCrudController">1fb1090</argument>
       </argument>
       <argument type="collection">
         <argument key="App\Entity\Lieucamping">App\Controller\Admin\LieucampingCrudController</argument>
@@ -7755,9 +7789,9 @@
         <argument key="App\Entity\User">App\Controller\Admin\UserCrudController</argument>
       </argument>
       <argument type="collection">
-        <argument key="c7412e3">App\Controller\Admin\LieucampingCrudController</argument>
-        <argument key="e7615a5">App\Controller\Admin\RegionCrudController</argument>
-        <argument key="8f3c127">App\Controller\Admin\UserCrudController</argument>
+        <argument key="31e60e1">App\Controller\Admin\LieucampingCrudController</argument>
+        <argument key="55eca7b">App\Controller\Admin\RegionCrudController</argument>
+        <argument key="1fb1090">App\Controller\Admin\UserCrudController</argument>
       </argument>
     </service>
     <service id=".service_locator.yY.p4P7" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7838,12 +7872,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.wcyNGhy" method="withContext"/>
     </service>
-    <service id=".service_locator.wcyNGhy.App\Controller\Admin\UserCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\UserCrudController"/>
-      <argument>App\Controller\Admin\UserCrudController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.wcyNGhy" method="withContext"/>
-    </service>
     <service id=".service_locator.l1ae.Qz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7858,6 +7886,24 @@
         <argument key="serializer" type="service_closure" id="serializer" on-invalid="ignore"/>
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
+    </service>
+    <service id=".service_locator.l1ae.Qz.App\Controller\Admin\StatisticsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\StatisticsController"/>
+      <argument>App\Controller\Admin\StatisticsController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
+    </service>
+    <service id=".service_locator.wcyNGhy.App\Controller\Admin\UserCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\UserCrudController"/>
+      <argument>App\Controller\Admin\UserCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.wcyNGhy" method="withContext"/>
+    </service>
+    <service id=".service_locator.l1ae.Qz.App\Controller\AvisController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\AvisController"/>
+      <argument>App\Controller\AvisController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
     <service id=".service_locator.l1ae.Qz.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
@@ -8073,12 +8119,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.OUwpT9v"/>
+      <argument type="service" id=".service_locator..Hh6wSk"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.OUwpT9v"/>
+      <argument type="service" id=".service_locator..Hh6wSk"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9062,9 +9108,10 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Contracts\Menu\MenuItemMatcherInterface" alias="EasyCorp\Bundle\EasyAdminBundle\Menu\MenuItemMatcher"/>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Contracts\Orm\EntityPaginatorInterface" alias="EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator"/>
+    <service id="Symfony\UX\Chartjs\Builder\ChartBuilderInterface" alias="chartjs.builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.OUwpT9v"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator..Hh6wSk"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9090,7 +9137,7 @@
     <service id=".service_locator.rAlqQ78" alias=".service_locator.3on9uHL"/>
     <service id=".service_locator.tbo4Jjv" alias=".service_locator.bgO__Zr"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
-    <service id=".service_locator.GVx98e3" alias=".service_locator.OUwpT9v"/>
+    <service id=".service_locator.VqxqJOq" alias=".service_locator..Hh6wSk"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.rv3Scz2" alias=".service_locator..i8Fob0"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>

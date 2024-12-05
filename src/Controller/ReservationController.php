@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 class ReservationController extends AbstractController
 {
     #[Route('/reservation/{id}', name: 'app_reservation')]
@@ -22,6 +21,10 @@ class ReservationController extends AbstractController
 
         if (!$lieuCamping) {
             throw $this->createNotFoundException('Lieu de camping non trouvé.');
+        }
+        if (!$this->getUser()) {
+            $this->addFlash('warning', 'Vous devez être connecté pour laisser un avis.');
+            return $this->redirectToRoute('app_login');
         }
         $reservation = new Reservation();
         $reservation->setLieuCamping($lieuCamping); 

@@ -39,8 +39,8 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
 
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
-        // line 1
-        return "base.html.twig";
+        // line 2
+        return "home/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -52,7 +52,7 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "lieu_camping_contloller/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "lieu_camping_contloller/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("home/index.html.twig", "lieu_camping_contloller/index.html.twig", 2);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -126,43 +126,42 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
 
         // line 9
         yield "    <h1 >Liste des Lieux de Camping</h1>
-
     <div class=\"lieux-container\">
         ";
-        // line 12
-        if ( !Twig\Extension\CoreExtension::testEmpty((isset($context["lieuxCamping"]) || array_key_exists("lieuxCamping", $context) ? $context["lieuxCamping"] : (function () { throw new RuntimeError('Variable "lieuxCamping" does not exist.', 12, $this->source); })()))) {
-            // line 13
+        // line 11
+        if ( !Twig\Extension\CoreExtension::testEmpty((isset($context["lieuxCamping"]) || array_key_exists("lieuxCamping", $context) ? $context["lieuxCamping"] : (function () { throw new RuntimeError('Variable "lieuxCamping" does not exist.', 11, $this->source); })()))) {
+            // line 12
             yield "            ";
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["lieuxCamping"]) || array_key_exists("lieuxCamping", $context) ? $context["lieuxCamping"] : (function () { throw new RuntimeError('Variable "lieuxCamping" does not exist.', 13, $this->source); })()));
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["lieuxCamping"]) || array_key_exists("lieuxCamping", $context) ? $context["lieuxCamping"] : (function () { throw new RuntimeError('Variable "lieuxCamping" does not exist.', 12, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["lieu"]) {
-                // line 14
+                // line 13
                 yield "                <div class=\"lieu-card\">
                     <!-- Section gauche : Image et nom -->
                     <div class=\"lieu-left\">
                         <h2>
                             <a href=\"";
-                // line 18
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieu_camping_detail", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "id", [], "any", false, false, false, 18)]), "html", null, true);
+                // line 17
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieu_camping_detail", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "id", [], "any", false, false, false, 17)]), "html", null, true);
                 yield "\">   
                                 ";
-                // line 19
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "nom", [], "any", false, false, false, 19), "html", null, true);
+                // line 18
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "nom", [], "any", false, false, false, 18), "html", null, true);
                 yield "
                             </a>
                         </h2>
                         ";
-                // line 22
-                if (CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "photo", [], "any", false, false, false, 22)) {
-                    // line 23
+                // line 21
+                if (CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "photo", [], "any", false, false, false, 21)) {
+                    // line 22
                     yield "                            <img src=\"";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "photo", [], "any", false, false, false, 23))), "html", null, true);
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "photo", [], "any", false, false, false, 22))), "html", null, true);
                     yield "\" alt=\"";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "nom", [], "any", false, false, false, 23), "html", null, true);
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "nom", [], "any", false, false, false, 22), "html", null, true);
                     yield "\">
                         ";
                 }
-                // line 25
+                // line 24
                 yield "                     
                     </div>
 
@@ -173,43 +172,40 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
                         <p>
                             <span class=\"icon-map\"></span>
                             Coordonnées : ";
-                // line 34
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "coordonner", [], "any", false, false, false, 34), "html", null, true);
+                // line 33
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "coordonner", [], "any", false, false, false, 33), "html", null, true);
                 yield "
                         </p>
                         <p>
                             <span class=\"icon-person\"></span>
                             Capacité : ";
-                // line 38
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "capacite", [], "any", false, false, false, 38), "html", null, true);
+                // line 37
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "capacite", [], "any", false, false, false, 37), "html", null, true);
                 yield " personnes
                         </p>
-                        <p>
-                            <span class=\"icon-person\"></span>
-                            <p>Capacité disponible : ";
-                // line 42
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "capaciteDisponible", [], "any", false, false, false, 42), "html", null, true);
-                yield "</p>
-                        </p>
                         <p>Région : ";
-                // line 44
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "regionId", [], "any", false, false, false, 44), "getNomRegion", [], "method", false, false, false, 44), "html", null, true);
+                // line 39
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "regionId", [], "any", false, false, false, 39), "getNomRegion", [], "method", false, false, false, 39), "html", null, true);
                 yield "</p>
                     </div>
+                    place restante : ";
+                // line 41
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieu"], "PlacesRestantes", [], "any", false, false, false, 41), "html", null, true);
+                yield "
                 </div>
             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['lieu'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 48
+            // line 44
             yield "        ";
         } else {
-            // line 49
+            // line 45
             yield "            <p>Aucun lieu de camping n'a été trouvé.</p>
         ";
         }
-        // line 51
+        // line 47
         yield "    </div>
 ";
         
@@ -221,7 +217,7 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
         yield from [];
     }
 
-    // line 54
+    // line 50
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -234,7 +230,7 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 55
+        // line 51
         yield "<!-- Pied de page -->
 ";
         
@@ -267,13 +263,13 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
      */
     public function getDebugInfo(): array
     {
-        return array (  238 => 55,  225 => 54,  213 => 51,  209 => 49,  206 => 48,  196 => 44,  191 => 42,  184 => 38,  177 => 34,  166 => 25,  158 => 23,  156 => 22,  150 => 19,  146 => 18,  140 => 14,  135 => 13,  133 => 12,  128 => 9,  115 => 8,  89 => 4,  66 => 3,  43 => 1,);
+        return array (  234 => 51,  221 => 50,  209 => 47,  205 => 45,  202 => 44,  193 => 41,  188 => 39,  183 => 37,  176 => 33,  165 => 24,  157 => 22,  155 => 21,  149 => 18,  145 => 17,  139 => 13,  134 => 12,  132 => 11,  128 => 9,  115 => 8,  89 => 4,  66 => 3,  43 => 2,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
-
+        return new Source("
+{% extends 'home/index.html.twig' %}
 {% block title %}Liste des Lieux de Camping{% endblock %}
 {%block stylesheets%}<link rel=\"stylesheet\" href=\"{{ asset('lieu/stylelieu.css') }}\">
 {% endblock %}
@@ -281,7 +277,6 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
 
 {% block body %}
     <h1 >Liste des Lieux de Camping</h1>
-
     <div class=\"lieux-container\">
         {% if lieuxCamping is not empty %}
             {% for lieu in lieuxCamping %}
@@ -311,12 +306,9 @@ class __TwigTemplate_0e045c5f63c00681a7fabce68a5e9b3b61a5fb29907e79fea9a98cab81a
                             <span class=\"icon-person\"></span>
                             Capacité : {{ lieu.capacite }} personnes
                         </p>
-                        <p>
-                            <span class=\"icon-person\"></span>
-                            <p>Capacité disponible : {{ lieu.capaciteDisponible }}</p>
-                        </p>
                         <p>Région : {{ lieu.regionId.getNomRegion() }}</p>
                     </div>
+                    place restante : {{lieu.PlacesRestantes }}
                 </div>
             {% endfor %}
         {% else %}

@@ -29,7 +29,19 @@ class Avis
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $commentaire = null;
+    public function __construct()
+    {
+        // Initialiser la date à la date actuelle lors de la création de l'entité
+        $this->date = new \DateTime();
+    }
 
+    #[ORM\PrePersist]
+    public function setDateCreation(): void
+    {
+        if ($this->date === null) {
+            $this->date = new \DateTime(); 
+        }
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -46,8 +58,6 @@ class Avis
         $this->user = $user;
         return $this;
     }
-
-    // Getter et Setter pour Lieucamping
     public function getIdLieu(): ?Lieucamping
     {
         return $this->id_lieu;
@@ -59,7 +69,6 @@ class Avis
         return $this;
     }
 
-    // Getter et Setter pour Date
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;

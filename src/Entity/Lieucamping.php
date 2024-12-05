@@ -43,8 +43,12 @@ class Lieucamping
     #[ORM\OneToMany(mappedBy: 'lieu_camping', targetEntity: Reservation::class)]
     private Collection $reservations;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $PlacesRestantes = null;
+
+  
     #[ORM\Column]
-    private ?int $CapaciteDisponible = null;
+   
 
     public function __construct()
     {
@@ -193,6 +197,22 @@ class Lieucamping
 
         return $this;
     }
+
+    public function getPlacesRestantes(): ?int
+    {
+        return $this->PlacesRestantes;
+    }
+
+    public function setPlacesRestantes(?int $PlacesRestantes): static
+    {
+        $this->PlacesRestantes = $PlacesRestantes;
+
+        return $this;
+    }
+
+    
+
+   
    
    
 }
