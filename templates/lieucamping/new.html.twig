@@ -1,0 +1,11 @@
+{% extends 'admin/dashboard/index.html.twig' %}
+
+{% block title %}New Lieucamping{% endblock %}
+
+{% block body %}
+    <h1>Create new Lieucamping</h1>
+
+    {{ include('lieucamping/_form.html.twig') }}
+
+    <a href="{{ path('app_lieucamping_index') }}">back to list</a>
+{% endblock %}

@@ -49,17 +49,12 @@ class LieuCampingContlollerController extends AbstractController
         }
         $reste = $lieuCamping->getCapacite() - $totalPersonnes;
         $lieuCamping->setPlacesRestantes($reste);
-    
-        // Sauvegarder la mise à jour
         $entityManager->flush();
-    
-        // Récupérer les avis pour le lieu de camping
         $avis = $entityManager->getRepository(Avis::class)->findBy(['id_lieu' => $lieuCamping]);
-    
-        // Rendre la vue
+
         return $this->render('lieu_camping_contloller/detail.html.twig', [
             'lieuCamping' => $lieuCamping,
-            'avis' => $avis, // Passer les avis à la vue
+            'avis' => $avis, 
         ]);
     }
     

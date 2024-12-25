@@ -1,0 +1,120 @@
+{% extends 'admin/dashboard/index.html.twig' %}
+
+{% block title %}Edit Lieucamping{% endblock %}
+
+{% block body %}
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Edit Lieucamping</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ path('app_lieucamping_index') }}">Back to List</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">Formulaire de modification</h3>
+                            </div>
+                            <!-- /.card-header -->
+
+                            <!-- Form Start -->
+                            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                                <div class="card-body">
+                                    <!-- Nom -->
+                                    <div class="form-group row">
+                                        <label for="{{ form.nom.vars.id }}" class="col-sm-2 col-form-label">Nom</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'id': form.nom.vars.id}}) }}
+                                        </div>
+                                    </div>
+
+                                    <!-- Description -->
+                                    <div class="form-group row">
+                                        <label for="{{ form.description.vars.id }}" class="col-sm-2 col-form-label">Description</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(form.description, {'attr': {'class': 'form-control', 'id': form.description.vars.id}}) }}
+                                        </div>
+                                    </div>
+
+                                    <!-- Coordonnées -->
+                                    <div class="form-group row">
+                                        <label for="{{ form.coordonner.vars.id }}" class="col-sm-2 col-form-label">Coordonnées</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(form.coordonner, {'attr': {'class': 'form-control', 'id': form.coordonner.vars.id}}) }}
+                                        </div>
+                                    </div>
+
+                                    <!-- Photo -->
+                                    <<!-- edit.html.twig -->
+
+                                    <div class="form-group row">
+                                        <label for="{{ form.photo.vars.id }}" class="col-sm-2 col-form-label">Photo</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(form.photo, {'attr': {'class': 'form-control', 'id': form.photo.vars.id}}) }}
+                                            
+                                            {% if lieucamping.photo %}
+                                                <div class="mt-3">
+                                                    <label>Image actuelle :</label><br>
+                                                    <img src="{{ asset('uploads/photos/' ~ lieucamping.photo) }}" alt="Photo" width="100">
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Capacité -->
+                                    <div class="form-group row">
+                                        <label for="{{ form.capacite.vars.id }}" class="col-sm-2 col-form-label">Capacité</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(form.capacite, {'attr': {'class': 'form-control', 'id': form.capacite.vars.id}}) }}
+                                        </div>
+                                    </div>
+
+                                    <!-- Places Restantes -->
+                                    <div class="form-group row">
+                                        <label for="{{ form.PlacesRestantes.vars.id }}" class="col-sm-2 col-form-label">Places restantes</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(form.PlacesRestantes, {'attr': {'class': 'form-control', 'id': form.PlacesRestantes.vars.id}}) }}
+                                        </div>
+                                    </div>
+
+                                    <!-- Région -->
+                                    <div class="form-group row">
+                                        <label for="{{ form.region_id.vars.id }}" class="col-sm-2 col-form-label">Région</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(form.region_id, {'attr': {'class': 'form-control', 'id': form.region_id.vars.id}}) }}
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                                <!-- /.card-body -->
+
+                                <!-- Card Footer -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-info">Mettre à jour</button>
+                                    <a href="{{ path('app_lieucamping_index') }}" class="btn btn-default float-right">Annuler</a>
+                                </div>
+                                <!-- /.card-footer -->
+                            {{ form_end(form) }}
+                            <!-- Form End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

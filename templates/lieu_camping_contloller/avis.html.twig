@@ -2,15 +2,36 @@
 
 {% block title %}Ajouter un avis{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('lieu/avis.css') }}">
+{% endblock %}
+
 {% block body %}
-    <h1>Ajouter un avis pour un lieu de camping</h1>
+    <div class="container mt-5">
+        <h1 class="page-title text-center mb-4">Ajouter un avis pour un lieu de camping</h1>
 
-    {{ form_start(form) }}
-       
-        {{ form_row(form.commentaire) }}
-        {{ form_row(form.user) }}
-        {{ form_row(form.id_lieu) }}
+        {{ form_start(form) }}
+        
+        <div class="form-group">
+            {{ form_label(form.commentaire, 'Votre commentaire') }}
+            {{ form_widget(form.commentaire, {'attr': {'class': 'form-control'}}) }}
+            {% if form.commentaire.vars.errors|length > 0 %}
+                <div class="form-error text-danger mt-2">{{ form.commentaire.vars.errors|first }}</div>
+            {% endif %}
+        </div>
 
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-    {{ form_end(form) }}
+        <div class="form-group mt-3">
+            {{ form_label(form.user, 'Votre nom') }}
+            {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group mt-3">
+            {{ form_label(form.id_lieu, 'Lieu de camping') }}
+            {{ form_widget(form.id_lieu, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Envoyer</button>
+
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

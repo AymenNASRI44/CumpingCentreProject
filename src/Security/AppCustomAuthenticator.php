@@ -55,8 +55,7 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 
         // Vérifier si l'utilisateur a le rôle ADMIN
         if (in_array('ROLE_ADMIN', $user->getRoles(), true)) {
-            // Rediriger vers le dashboard admin
-            return new RedirectResponse($this->urlGenerator->generate('admin'));
+            return new RedirectResponse($this->urlGenerator->generate('app_admin_dashboard'));
         }
 
         // Sinon, rediriger vers la page d'accueil
