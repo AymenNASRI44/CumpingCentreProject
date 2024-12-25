@@ -14,6 +14,9 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\HttpFoundation\File\Exception\IOExceptionInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+
 
 
 #[Route('/lieucamping')]
@@ -56,49 +59,53 @@ class LieucampingController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_lieucamping_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Lieucamping $lieucamping, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(LieucampingType::class, $lieucamping);
-        $form->handleRequest($request);
+public function edit(Request $request, Lieucamping $lieucamping, EntityManagerInterface $entityManager): Response
+{
+    $form = $this->createForm(LieucampingType::class, $lieucamping);
+    $form->handleRequest($request);
 
-        // Si le formulaire est soumis et valide
-        if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $photoFile */
-            $photoFile = $form->get('photo')->getData(); // Récupère le fichier téléchargé
+    if ($form->isSubmitted() && $form->isValid()) {
+        /** @var UploadedFile $photoFile */
+        $photoFile = $form->get('photo')->getData();
 
-            // Si un fichier photo a été téléchargé
-            if ($photoFile) {
-                // Créez un nom unique pour l'image téléchargée
-                $newFilename = uniqid().'.'.$photoFile->guessExtension();
+        // Vérifiez si un fichier a été téléchargé
+        if ($photoFile) {
+            // Créez un nom unique pour le fichier
+            $newFilename = uniqid().'.'.$photoFile->guessExtension();
 
-                // Déplacez le fichier dans le répertoire 'uploads/photos'
-               
-                    $photoFile->move(
-                        $this->getParameter('assets/img'), // Chemin du répertoire pour stocker les photos
-                        $newFilename
-                    );
-                    // Mettez à jour la propriété "photo" de l'entité avec le nom du fichier
-                    $lieucamping->setPhoto($newFilename);
-                 
-                    $this->addFlash('error', 'Erreur lors du téléchargement de la photo.');
-                    return $this->redirectToRoute('app_lieucamping_edit', ['id' => $lieucamping->getId()]);
-                
+            try {
+                // Déplacez le fichier dans le répertoire configuré
+                $photoFile->move(
+                    $this->getParameter('assets_img'), // Paramètre à définir dans `services.yaml`
+                    $newFilename
+                );
+
+                // Mettez à jour l'entité avec le nouveau nom de fichier
+                $lieucamping->setPhoto($newFilename);
+            } catch (FileException $e) {
+                // Gérer les erreurs liées au téléchargement
+                $this->addFlash('error', 'Erreur lors du téléchargement de la photo.');
+                return $this->redirectToRoute('app_lieucamping_edit', ['id' => $lieucamping->getId()]);
             }
-
-            // Sauvegardez les changements dans la base de données
-            $entityManager->flush();
-
-            // Redirigez vers la liste des Lieucamping après la mise à jour
-            $this->addFlash('success', 'Le camping a été mis à jour avec succès.');
-            return $this->redirectToRoute('app_lieucamping_index');
         }
 
-        // Si le formulaire n'a pas encore été soumis ou s'il y a une erreur
-        return $this->renderForm('lieucamping/edit.html.twig', [
-            'lieucamping' => $lieucamping,
-            'form' => $form,
-        ]);
+        // Persister les modifications dans la base de données
+        $entityManager->flush();
+
+        // Message de confirmation
+        $this->addFlash('success', 'Le camping a été mis à jour avec succès.');
+
+        // Redirection après succès
+        return $this->redirectToRoute('app_lieucamping_index');
     }
+
+    // Rendre le formulaire en cas de non soumission ou d'erreur
+    return $this->renderForm('lieucamping/edit.html.twig', [
+        'lieucamping' => $lieucamping,
+        'form' => $form,
+    ]);
+}
+
 
     #[Route('/{id}', name: 'app_lieucamping_delete', methods: ['POST'])]
     public function delete(Request $request, Lieucamping $lieucamping, EntityManagerInterface $entityManager): Response

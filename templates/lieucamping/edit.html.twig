@@ -1,4 +1,4 @@
-{% extends 'admin/dashboard/index.html.twig' %}
+{% extends 'lieucamping/index.html.twig' %}
 
 {% block title %}Edit Lieucamping{% endblock %}
 
@@ -64,7 +64,7 @@
                                     <div class="form-group row">
                                         <label for="{{ form.photo.vars.id }}" class="col-sm-2 col-form-label">Photo</label>
                                         <div class="col-sm-10">
-                                            {{ form_widget(form.photo, {'attr': {'class': 'form-control', 'id': form.photo.vars.id}}) }}
+                                            {{ form_widget(form.photo, {'attr': {'class': 'form-control', 'id': form.photo.vars.id }} ) }}
                                             
                                             {% if lieucamping.photo %}
                                                 <div class="mt-3">

@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType; // Importez la classe EntityType
 use App\Entity\Region;
+use Symfony\Component\Form\Extension\Core\Type\FileType; // Importez la classe FileType
 class LieucampingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -16,7 +17,11 @@ class LieucampingType extends AbstractType
             ->add('nom')
             ->add('description')
             ->add('coordonner')
-            ->add('photo')
+            ->add('photo', FileType::class, [
+                'label' => 'Photo',
+                'mapped' => false, // ne pas lier ce champ à une propriété de l'entité
+                'required' => true, // le champ n'est pas obligatoire
+            ])
             ->add('capacite')
             ->add('PlacesRestantes')
             ->add('region_id', EntityType::class, [

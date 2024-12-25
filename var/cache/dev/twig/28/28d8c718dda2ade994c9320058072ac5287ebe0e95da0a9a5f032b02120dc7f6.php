@@ -38,7 +38,7 @@ class __TwigTemplate_6f7d079238c600139664a254b03551bf3567766dd87fecf4c0f33a7c929
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "admin/dashboard/index.html.twig";
+        return "lieucamping/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_6f7d079238c600139664a254b03551bf3567766dd87fecf4c0f33a7c929
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "lieucamping/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/dashboard/index.html.twig", "lieucamping/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("lieucamping/index.html.twig", "lieucamping/edit.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -309,7 +309,7 @@ class __TwigTemplate_6f7d079238c600139664a254b03551bf3567766dd87fecf4c0f33a7c929
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'admin/dashboard/index.html.twig' %}
+        return new Source("{% extends 'lieucamping/index.html.twig' %}
 
 {% block title %}Edit Lieucamping{% endblock %}
 
@@ -375,7 +375,7 @@ class __TwigTemplate_6f7d079238c600139664a254b03551bf3567766dd87fecf4c0f33a7c929
                                     <div class=\"form-group row\">
                                         <label for=\"{{ form.photo.vars.id }}\" class=\"col-sm-2 col-form-label\">Photo</label>
                                         <div class=\"col-sm-10\">
-                                            {{ form_widget(form.photo, {'attr': {'class': 'form-control', 'id': form.photo.vars.id}}) }}
+                                            {{ form_widget(form.photo, {'attr': {'class': 'form-control', 'id': form.photo.vars.id }} ) }}
                                             
                                             {% if lieucamping.photo %}
                                                 <div class=\"mt-3\">

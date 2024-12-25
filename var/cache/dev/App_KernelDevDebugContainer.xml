@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\xampp\htdocs\projetC\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\xampp\htdocs\projetC\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/xampp/htdocs/projetC/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/xampp/htdocs/projetC/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\xampp\htdocs\projetC\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -79,7 +79,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
-    <parameter key="photos_directory">C:\xampp\htdocs\projetC/public/uploads/photos</parameter>
+    <parameter key="assets_img">C:\xampp\htdocs\projetC/public/uploads/photos</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -116,14 +116,14 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\xampp\htdocs\projetC/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\xampp\htdocs\projetC\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/xampp/htdocs/projetC/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\xampp\htdocs\projetC\var\cache\dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:/xampp/htdocs/projetC/var/cache/dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\xampp\htdocs\projetC.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
@@ -133,15 +133,15 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\xampp\htdocs\projetC\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:/xampp/htdocs/projetC/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\xampp\htdocs\projetC\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/xampp/htdocs/projetC/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\projetC\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/xampp/htdocs/projetC/var/cache/dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -214,7 +214,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\projetC\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/xampp/htdocs/projetC/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -545,7 +545,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/http_cache</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -555,7 +555,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -1419,7 +1419,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1438,7 +1438,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/app</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1716,7 +1716,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\projetC\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/xampp/htdocs/projetC/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -2998,7 +2998,7 @@
       <argument type="service" id=".service_locator.EyZUPFz.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\projetC\var\cache\dev</argument>
+        <argument key="cache_dir">C:/xampp/htdocs/projetC/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3106,13 +3106,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/annotations.php</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/annotations.php</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3244,10 +3244,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/serialization.php</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/serialization.php</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3399,7 +3399,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/sessions</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3411,7 +3411,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:\xampp\htdocs\projetC\var\cache\dev/sessions</argument>
+          <argument>C:/xampp/htdocs/projetC/var/cache/dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -3598,10 +3598,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/validation.php</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/validation.php</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3988,7 +3988,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\xampp\htdocs\projetC\var\cache\dev/profiler</argument>
+      <argument>file:C:/xampp/htdocs/projetC/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4035,7 +4035,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -4555,7 +4555,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\xampp\htdocs\projetC\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/xampp/htdocs/projetC/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4928,7 +4928,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\xampp\htdocs\projetC\var\cache\dev/twig</argument>
+        <argument key="cache">C:/xampp/htdocs/projetC/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -6450,7 +6450,7 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory">
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev</argument>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Factory\MenuFactory"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry"/>
@@ -7268,16 +7268,16 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.LyRga8r" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.l2QwsaZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.LyRga8r" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
       </argument>
     </service>
     <service id=".service_locator.AMGS6oS" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7344,9 +7344,10 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.LruWq6u.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.UaDkrZn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kih..iz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\CrudReservationController::delete" type="service_closure" id=".service_locator.T8q8jja"/>
         <argument key="App\Controller\CrudReservationController::edit" type="service_closure" id=".service_locator.T8q8jja"/>
         <argument key="App\Controller\CrudReservationController::index" type="service_closure" id=".service_locator.LyRga8r"/>
@@ -7373,6 +7374,7 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
+        <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\CrudReservationController:delete" type="service_closure" id=".service_locator.T8q8jja"/>
         <argument key="App\Controller\CrudReservationController:edit" type="service_closure" id=".service_locator.T8q8jja"/>
         <argument key="App\Controller\CrudReservationController:index" type="service_closure" id=".service_locator.LyRga8r"/>
@@ -7812,7 +7814,7 @@
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry">
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev</argument>
       <argument type="collection"/>
       <argument type="collection"/>
     </service>
@@ -8115,12 +8117,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.UaDkrZn"/>
+      <argument type="service" id=".service_locator.kih..iz"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.UaDkrZn"/>
+      <argument type="service" id=".service_locator.kih..iz"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8859,7 +8861,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>WAC0gop-jV</argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/app</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -8869,7 +8871,7 @@
       <argument>VQMWALsYGe</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8877,7 +8879,7 @@
       <argument>p4v-E7WOEE</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8885,7 +8887,7 @@
       <argument>l6qOGNwSXG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8893,7 +8895,7 @@
       <argument>BWzHXgxfXt</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8901,14 +8903,14 @@
       <argument>+x9-M9G+1f</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>eSSqwtzzoO</argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/app</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -8918,7 +8920,7 @@
       <argument>hQMgSHGyP5</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8928,7 +8930,7 @@
       <argument>f4NvdkZkWR</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8936,7 +8938,7 @@
       <argument>oT8jlQz7ZE</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8944,7 +8946,7 @@
       <argument>yI31hBVTe1</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\projetC\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/projetC/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9099,7 +9101,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.UaDkrZn"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.kih..iz"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9125,7 +9127,7 @@
     <service id=".service_locator.g8OCE4P" alias=".service_locator.gtuUIQz"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
     <service id=".service_locator.PaJQGxZ" alias=".service_locator.LruWq6u"/>
-    <service id=".service_locator.rpRGC68" alias=".service_locator.UaDkrZn"/>
+    <service id=".service_locator.DK1pJzG" alias=".service_locator.kih..iz"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.OgFXxdT" alias=".service_locator.EslBo9R"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
@@ -9155,8 +9157,8 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
-    <service id=".service_locator.Zp2Ckdu" alias=".service_locator.LyRga8r"/>
     <service id=".service_locator.Er0_7SX" alias=".service_locator.l2QwsaZ"/>
+    <service id=".service_locator.Zp2Ckdu" alias=".service_locator.LyRga8r"/>
     <service id=".service_locator.jbDXOr1" alias=".service_locator.AMGS6oS"/>
     <service id=".service_locator.gucHzWk" alias=".service_locator.T8q8jja"/>
     <service id=".service_locator.Kk7IHR6" alias=".service_locator.QPQjjMu"/>

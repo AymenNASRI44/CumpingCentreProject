@@ -59,13 +59,13 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         yield from $this->unwrap()->yieldBlock('head', $context, $blocks);
         // line 21
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 355
+        // line 206
         yield "  
 <!-- ./wrapper -->
 ";
-        // line 357
+        // line 208
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 382
+        // line 309
         yield "</body>
 </html>
 ";
@@ -156,10 +156,16 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         <a class=\"nav-link\" data-widget=\"pushmenu\" href=\"#\" role=\"button\"><i class=\"fas fa-bars\"></i></a>
       </li>
       <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"index3.html\" class=\"nav-link\">Home</a>
+        <a href=\"";
+        // line 32
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\" class=\"nav-link\">Home</a>
       </li>
       <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"#\" class=\"nav-link\">Contact</a>
+        <a href=\"";
+        // line 35
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_dashboard");
+        yield "\" class=\"nav-link\">dashborad</a>
       </li>
     </ul>
 
@@ -175,104 +181,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
       </div>
     </form>
 
-    <!-- Right navbar links -->
-    <ul class=\"navbar-nav ml-auto\">
-      <!-- Messages Dropdown Menu -->
-      <li class=\"nav-item dropdown\">
-        <a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\">
-          <i class=\"far fa-comments\"></i>
-          <span class=\"badge badge-danger navbar-badge\">3</span>
-        </a>
-        <div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-right\">
-          <a href=\"#\" class=\"dropdown-item\">
-            <!-- Message Start -->
-            <div class=\"media\">
-              <img src=\"dist/img/user1-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 mr-3 img-circle\">
-              <div class=\"media-body\">
-                <h3 class=\"dropdown-item-title\">
-                  Brad Diesel
-                  <span class=\"float-right text-sm text-danger\"><i class=\"fas fa-star\"></i></span>
-                </h3>
-                <p class=\"text-sm\">Call me whenever you can...</p>
-                <p class=\"text-sm text-muted\"><i class=\"far fa-clock mr-1\"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <!-- Message Start -->
-            <div class=\"media\">
-              <img src=\"dist/img/user8-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle mr-3\">
-              <div class=\"media-body\">
-                <h3 class=\"dropdown-item-title\">
-                  John Pierce
-                  <span class=\"float-right text-sm text-muted\"><i class=\"fas fa-star\"></i></span>
-                </h3>
-                <p class=\"text-sm\">I got your message bro</p>
-                <p class=\"text-sm text-muted\"><i class=\"far fa-clock mr-1\"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <!-- Message Start -->
-            <div class=\"media\">
-              <img src=\"dist/img/user3-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle mr-3\">
-              <div class=\"media-body\">
-                <h3 class=\"dropdown-item-title\">
-                  Nora Silvester
-                  <span class=\"float-right text-sm text-warning\"><i class=\"fas fa-star\"></i></span>
-                </h3>
-                <p class=\"text-sm\">The subject goes here</p>
-                <p class=\"text-sm text-muted\"><i class=\"far fa-clock mr-1\"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item dropdown-footer\">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class=\"nav-item dropdown\">
-        <a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\">
-          <i class=\"far fa-bell\"></i>
-          <span class=\"badge badge-warning navbar-badge\">15</span>
-        </a>
-        <div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-right\">
-          <span class=\"dropdown-item dropdown-header\">15 Notifications</span>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <i class=\"fas fa-envelope mr-2\"></i> 4 new messages
-            <span class=\"float-right text-muted text-sm\">3 mins</span>
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <i class=\"fas fa-users mr-2\"></i> 8 friend requests
-            <span class=\"float-right text-muted text-sm\">12 hours</span>
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <i class=\"fas fa-file mr-2\"></i> 3 new reports
-            <span class=\"float-right text-muted text-sm\">2 days</span>
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item dropdown-footer\">See All Notifications</a>
-        </div>
-      </li>
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" data-widget=\"fullscreen\" href=\"#\" role=\"button\">
-          <i class=\"fas fa-expand-arrows-alt\"></i>
-        </a>
-      </li>
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" data-widget=\"control-sidebar\" data-slide=\"true\" href=\"#\" role=\"button\">
-          <i class=\"fas fa-th-large\"></i>
-        </a>
-      </li>
-    </ul>
+    
   </nav>
   <!-- /.navbar -->
   
@@ -285,16 +194,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
     </a>
 
     <!-- Sidebar -->
-    <div class=\"sidebar\">
-      <!-- Sidebar user panel (optional) -->
-      <div class=\"user-panel mt-3 pb-3 mb-3 d-flex\">
-        <div class=\"image\">
-          <img src=\"dist/img/user2-160x160.jpg\" class=\"img-circle elevation-2\" alt=\"User Image\">
-        </div>
-        <div class=\"info\">
-          <a href=\"#\" class=\"d-block\">Alexander Pierce</a>
-        </div>
-      </div>
+    
 
       <!-- SidebarSearch Form -->
       <div class=\"form-inline\">
@@ -313,7 +213,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
           <li class=\"nav-item\">
             <a href=\"";
-        // line 188
+        // line 82
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_index");
         yield "\" class=\"nav-link\">
               <i class=\"nav-icon fas fa-mountain\"></i>
@@ -324,7 +224,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
           </li>
           <li class=\"nav-item\">
             <a href=\"";
-        // line 196
+        // line 90
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\" class=\"nav-link\">
               <i class=\"nav-icon far fa-user\"></i>
@@ -333,25 +233,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
               </p>
             </a>
           </li>
-          <li class=\"nav-item\">
-            <a href=\"";
-        // line 204
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieu_camping");
-        yield "\" class=\"nav-link\">
-              <i class=\"nav-icon fas fa-bookmark\"></i>
-              <p>
-                Reservations
-              </p>
-            </a>
-          </li>
-          <li class=\"nav-item\">
-            <a href=\"pages/gallery.html\" class=\"nav-link\">
-              <i class=\"nav-icon far fa-camper\"></i>
-              <p>
-                Avis
-              </p>
-            </a>
-          </li>
+          
+        
          
   
 
@@ -367,20 +250,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
     <div class=\"container-fluid\">
         <div class=\"row\">
             <!-- Carte pour la gestion des utilisateurs -->
-            <div class=\"col-lg-3 col-6\">
-                <div class=\"small-box bg-info\">
-                    <div class=\"inner\">
-                        <h3></h3>
-                        <p>Utilisateurs enregistrés</p>
-                    </div>
-                    <div class=\"icon\">
-                        <i class=\"fas fa-users\"></i>
-                    </div>
-                    <a href=\"\" class=\"small-box-footer\">
-                        Voir les utilisateurs <i class=\"fas fa-arrow-circle-right\"></i>
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -404,90 +274,83 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class=\"content\">
-      <div class=\"container-fluid\">
-        <!-- Info boxes -->
-        <div class=\"row\">
-          <div class=\"col-12 col-sm-6 col-md-3\">
+<div class=\"container-fluid\">
+    <!-- Info boxes -->
+    <div class=\"row\">
+        <!-- Nombre de réservations -->
+        <div class=\"col-12 col-sm-6 col-md-3\">
             <div class=\"info-box\">
-              <span class=\"info-box-icon bg-info elevation-1\"><i class=\"fas fa-cog\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">CPU Traffic</span>
-                <span class=\"info-box-number\">
-                  10
-                  <small>%</small>
-                </span>
-              </div>
-              <!-- /.info-box-content -->
+                <span class=\"info-box-icon bg-info elevation-1\"><i class=\"fas fa-book\"></i></span>
+                <div class=\"info-box-content\">
+                    <span class=\"info-box-text\">Réservations</span>
+                    <span class=\"info-box-number\">";
+        // line 147
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["reservationsCount"]) || array_key_exists("reservationsCount", $context) ? $context["reservationsCount"] : (function () { throw new RuntimeError('Variable "reservationsCount" does not exist.', 147, $this->source); })()), "html", null, true);
+        yield "</span>
+                </div>
             </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class=\"col-12 col-sm-6 col-md-3\">
-            <div class=\"info-box mb-3\">
-              <span class=\"info-box-icon bg-danger elevation-1\"><i class=\"fas fa-thumbs-up\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">Likes</span>
-                <span class=\"info-box-number\">41,410</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-
-          <!-- fix for small devices only -->
-          <div class=\"clearfix hidden-md-up\"></div>
-
-          <div class=\"col-12 col-sm-6 col-md-3\">
-            <div class=\"info-box mb-3\">
-              <span class=\"info-box-icon bg-success elevation-1\"><i class=\"fas fa-shopping-cart\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">Sales</span>
-                <span class=\"info-box-number\">760</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class=\"col-12 col-sm-6 col-md-3\">
-            <div class=\"info-box mb-3\">
-              <span class=\"info-box-icon bg-warning elevation-1\"><i class=\"fas fa-users\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">New Members</span>
-                <span class=\"info-box-number\">2,000</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
 
-      
+        <!-- Nombre de lieux de camping -->
+        <div class=\"col-12 col-sm-6 col-md-3\">
+            <div class=\"info-box\">
+                <span class=\"info-box-icon bg-success elevation-1\"><i class=\"fas fa-campground\"></i></span>
+                <div class=\"info-box-content\">
+                    <span class=\"info-box-text\">Lieux de Camping</span>
+                    <span class=\"info-box-number\">";
+        // line 158
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["lieuxCampingCount"]) || array_key_exists("lieuxCampingCount", $context) ? $context["lieuxCampingCount"] : (function () { throw new RuntimeError('Variable "lieuxCampingCount" does not exist.', 158, $this->source); })()), "html", null, true);
+        yield "</span>
+                </div>
+            </div>
+        </div>
 
-       
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
+        <!-- Nombre d'utilisateurs -->
+        <div class=\"col-12 col-sm-6 col-md-3\">
+            <div class=\"info-box\">
+                <span class=\"info-box-icon bg-warning elevation-1\"><i class=\"fas fa-users\"></i></span>
+                <div class=\"info-box-content\">
+                    <span class=\"info-box-text\">Utilisateurs</span>
+                    <span class=\"info-box-number\">";
+        // line 169
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["utilisateursCount"]) || array_key_exists("utilisateursCount", $context) ? $context["utilisateursCount"] : (function () { throw new RuntimeError('Variable "utilisateursCount" does not exist.', 169, $this->source); })()), "html", null, true);
+        yield "</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphiques -->
+    <div class=\"container-fluid\">
+      <!-- Graphiques Utilisateurs par Région et Répartition des Réservations par Lieu -->
+      <div class=\"row\">
+          <!-- Graphique Utilisateurs par Région -->
+          <div class=\"col-md-6\">
+              <div class=\"card card-info\">
+                  <div class=\"card-header\">
+                      <h3 class=\"card-title\">Utilisateurs par Région</h3>
+                  </div>
+                  <div class=\"card-body\">
+                      <canvas id=\"usersByRegionChart\" style=\"min-height: 250px; height: 250px;\"></canvas>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Graphique Répartition des Réservations par Lieu -->
+          <div class=\"col-md-6\">
+              <div class=\"card card-info\">
+                  <div class=\"card-header\">
+                      <h3 class=\"card-title\">Répartition des Réservations par Lieu</h3>
+                  </div>
+                  <div class=\"card-body\">
+                      <canvas id=\"resparlieuChart\" style=\"min-height: 250px; height: 250px;\"></canvas>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class=\"control-sidebar control-sidebar-dark\">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-  ";
+  
+ ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -497,7 +360,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         yield from [];
     }
 
-    // line 357
+    // line 208
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -510,63 +373,151 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 358
+        // line 209
         yield "<!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src=\"";
-        // line 360
+        // line 211
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery/jquery.min.js"), "html", null, true);
         yield "\"></script>
 <!-- Bootstrap -->
 <script src=\"";
-        // line 362
+        // line 213
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         yield "\"></script>
 <!-- overlayScrollbars -->
 <script src=\"";
-        // line 364
+        // line 215
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE App -->
 <script src=\"";
-        // line 366
+        // line 217
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/adminlte.js"), "html", null, true);
         yield "\"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src=\"";
-        // line 370
+        // line 221
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mousewheel/jquery.mousewheel.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 371
+        // line 222
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/raphael/raphael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 372
+        // line 223
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/jquery.mapael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 373
+        // line 224
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/maps/usa_states.min.js"), "html", null, true);
         yield "\"></script>
 <!-- ChartJS -->
 <script src=\"";
-        // line 375
+        // line 226
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/chart.js/Chart.min.js"), "html", null, true);
         yield "\"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src=\"";
-        // line 378
+        // line 229
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/demo.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=\"";
-        // line 380
+        // line 231
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/pages/dashboard2.js"), "html", null, true);
         yield "\"></script>
+<script>
+ 
+  // Données pour le graphique des utilisateurs par région
+  const usersByRegionData = {
+      labels: ";
+        // line 236
+        yield (isset($context["regions"]) || array_key_exists("regions", $context) ? $context["regions"] : (function () { throw new RuntimeError('Variable "regions" does not exist.', 236, $this->source); })());
+        yield ", 
+      datasets: [{
+          label: 'Utilisateurs',
+          backgroundColor: ['#f46e3f', '#1cffee', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+          borderColor: '#ffffff',
+          borderWidth: 1,
+          data: ";
+        // line 242
+        yield (isset($context["userCounts"]) || array_key_exists("userCounts", $context) ? $context["userCounts"] : (function () { throw new RuntimeError('Variable "userCounts" does not exist.', 242, $this->source); })());
+        yield " // Les nombres d'utilisateurs par région
+      }]
+  };
+
+  // Configuration du graphique
+  const usersByRegionOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      },
+      plugins: {
+          legend: {
+              display: false
+          }
+      }
+  };
+
+  // Initialisation du graphique
+  new Chart(document.getElementById('usersByRegionChart'), {
+      type: 'bar', 
+      data: usersByRegionData,
+      options: usersByRegionOptions
+  });
+</script>
+<script>
+ 
+  const resparlieuData = {
+      labels: ";
+        // line 272
+        yield (isset($context["lieuNames"]) || array_key_exists("lieuNames", $context) ? $context["lieuNames"] : (function () { throw new RuntimeError('Variable "lieuNames" does not exist.', 272, $this->source); })());
+        yield ", 
+      datasets: [{
+          label: 'Utilisateurs',
+          backgroundColor: ['#b8f43f', '#f56954', '#3ff4e6', '#b8f43f', '#f46e3f', '#3fd3f4'],
+          borderColor: '#ffffff',
+          borderWidth: 1,
+          data: ";
+        // line 278
+        yield (isset($context["reservationCounts"]) || array_key_exists("reservationCounts", $context) ? $context["reservationCounts"] : (function () { throw new RuntimeError('Variable "reservationCounts" does not exist.', 278, $this->source); })());
+        yield " 
+      }]
+  };
+
+  // Configuration du graphique
+  const resparlieuOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      },
+      plugins: {
+          legend: {
+              display: false
+          }
+      }
+  };
+
+  // Initialisation du graphique
+  new Chart(document.getElementById('resparlieuChart'), {
+      type: 'pie', // Vous pouvez changer ce type en 'pie' ou 'doughnut' pour d'autres graphiques
+      data: resparlieuData,
+      options: resparlieuOptions
+  });
+  
+</script>
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -590,7 +541,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
      */
     public function getDebugInfo(): array
     {
-        return array (  568 => 380,  563 => 378,  557 => 375,  552 => 373,  548 => 372,  544 => 371,  540 => 370,  533 => 366,  528 => 364,  523 => 362,  518 => 360,  514 => 358,  501 => 357,  339 => 204,  328 => 196,  317 => 188,  149 => 22,  136 => 21,  122 => 18,  118 => 17,  114 => 16,  110 => 15,  105 => 13,  100 => 11,  95 => 8,  82 => 7,  69 => 382,  67 => 357,  63 => 355,  61 => 21,  59 => 7,  51 => 1,);
+        return array (  490 => 278,  481 => 272,  448 => 242,  439 => 236,  431 => 231,  426 => 229,  420 => 226,  415 => 224,  411 => 223,  407 => 222,  403 => 221,  396 => 217,  391 => 215,  386 => 213,  381 => 211,  377 => 209,  364 => 208,  316 => 169,  302 => 158,  288 => 147,  228 => 90,  217 => 82,  167 => 35,  161 => 32,  149 => 22,  136 => 21,  122 => 18,  118 => 17,  114 => 16,  110 => 15,  105 => 13,  100 => 11,  95 => 8,  82 => 7,  69 => 309,  67 => 208,  63 => 206,  61 => 21,  59 => 7,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -626,10 +577,10 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         <a class=\"nav-link\" data-widget=\"pushmenu\" href=\"#\" role=\"button\"><i class=\"fas fa-bars\"></i></a>
       </li>
       <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"index3.html\" class=\"nav-link\">Home</a>
+        <a href=\"{{ path('app_home') }}\" class=\"nav-link\">Home</a>
       </li>
       <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"#\" class=\"nav-link\">Contact</a>
+        <a href=\"{{path('app_admin_dashboard')}}\" class=\"nav-link\">dashborad</a>
       </li>
     </ul>
 
@@ -645,104 +596,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
       </div>
     </form>
 
-    <!-- Right navbar links -->
-    <ul class=\"navbar-nav ml-auto\">
-      <!-- Messages Dropdown Menu -->
-      <li class=\"nav-item dropdown\">
-        <a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\">
-          <i class=\"far fa-comments\"></i>
-          <span class=\"badge badge-danger navbar-badge\">3</span>
-        </a>
-        <div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-right\">
-          <a href=\"#\" class=\"dropdown-item\">
-            <!-- Message Start -->
-            <div class=\"media\">
-              <img src=\"dist/img/user1-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 mr-3 img-circle\">
-              <div class=\"media-body\">
-                <h3 class=\"dropdown-item-title\">
-                  Brad Diesel
-                  <span class=\"float-right text-sm text-danger\"><i class=\"fas fa-star\"></i></span>
-                </h3>
-                <p class=\"text-sm\">Call me whenever you can...</p>
-                <p class=\"text-sm text-muted\"><i class=\"far fa-clock mr-1\"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <!-- Message Start -->
-            <div class=\"media\">
-              <img src=\"dist/img/user8-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle mr-3\">
-              <div class=\"media-body\">
-                <h3 class=\"dropdown-item-title\">
-                  John Pierce
-                  <span class=\"float-right text-sm text-muted\"><i class=\"fas fa-star\"></i></span>
-                </h3>
-                <p class=\"text-sm\">I got your message bro</p>
-                <p class=\"text-sm text-muted\"><i class=\"far fa-clock mr-1\"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <!-- Message Start -->
-            <div class=\"media\">
-              <img src=\"dist/img/user3-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle mr-3\">
-              <div class=\"media-body\">
-                <h3 class=\"dropdown-item-title\">
-                  Nora Silvester
-                  <span class=\"float-right text-sm text-warning\"><i class=\"fas fa-star\"></i></span>
-                </h3>
-                <p class=\"text-sm\">The subject goes here</p>
-                <p class=\"text-sm text-muted\"><i class=\"far fa-clock mr-1\"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item dropdown-footer\">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class=\"nav-item dropdown\">
-        <a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\">
-          <i class=\"far fa-bell\"></i>
-          <span class=\"badge badge-warning navbar-badge\">15</span>
-        </a>
-        <div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-right\">
-          <span class=\"dropdown-item dropdown-header\">15 Notifications</span>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <i class=\"fas fa-envelope mr-2\"></i> 4 new messages
-            <span class=\"float-right text-muted text-sm\">3 mins</span>
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <i class=\"fas fa-users mr-2\"></i> 8 friend requests
-            <span class=\"float-right text-muted text-sm\">12 hours</span>
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item\">
-            <i class=\"fas fa-file mr-2\"></i> 3 new reports
-            <span class=\"float-right text-muted text-sm\">2 days</span>
-          </a>
-          <div class=\"dropdown-divider\"></div>
-          <a href=\"#\" class=\"dropdown-item dropdown-footer\">See All Notifications</a>
-        </div>
-      </li>
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" data-widget=\"fullscreen\" href=\"#\" role=\"button\">
-          <i class=\"fas fa-expand-arrows-alt\"></i>
-        </a>
-      </li>
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" data-widget=\"control-sidebar\" data-slide=\"true\" href=\"#\" role=\"button\">
-          <i class=\"fas fa-th-large\"></i>
-        </a>
-      </li>
-    </ul>
+    
   </nav>
   <!-- /.navbar -->
   
@@ -755,16 +609,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
     </a>
 
     <!-- Sidebar -->
-    <div class=\"sidebar\">
-      <!-- Sidebar user panel (optional) -->
-      <div class=\"user-panel mt-3 pb-3 mb-3 d-flex\">
-        <div class=\"image\">
-          <img src=\"dist/img/user2-160x160.jpg\" class=\"img-circle elevation-2\" alt=\"User Image\">
-        </div>
-        <div class=\"info\">
-          <a href=\"#\" class=\"d-block\">Alexander Pierce</a>
-        </div>
-      </div>
+    
 
       <!-- SidebarSearch Form -->
       <div class=\"form-inline\">
@@ -797,22 +642,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
               </p>
             </a>
           </li>
-          <li class=\"nav-item\">
-            <a href=\"{{path('app_lieu_camping')}}\" class=\"nav-link\">
-              <i class=\"nav-icon fas fa-bookmark\"></i>
-              <p>
-                Reservations
-              </p>
-            </a>
-          </li>
-          <li class=\"nav-item\">
-            <a href=\"pages/gallery.html\" class=\"nav-link\">
-              <i class=\"nav-icon far fa-camper\"></i>
-              <p>
-                Avis
-              </p>
-            </a>
-          </li>
+          
+        
          
   
 
@@ -828,20 +659,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
     <div class=\"container-fluid\">
         <div class=\"row\">
             <!-- Carte pour la gestion des utilisateurs -->
-            <div class=\"col-lg-3 col-6\">
-                <div class=\"small-box bg-info\">
-                    <div class=\"inner\">
-                        <h3></h3>
-                        <p>Utilisateurs enregistrés</p>
-                    </div>
-                    <div class=\"icon\">
-                        <i class=\"fas fa-users\"></i>
-                    </div>
-                    <a href=\"\" class=\"small-box-footer\">
-                        Voir les utilisateurs <i class=\"fas fa-arrow-circle-right\"></i>
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -865,90 +683,74 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class=\"content\">
-      <div class=\"container-fluid\">
-        <!-- Info boxes -->
-        <div class=\"row\">
-          <div class=\"col-12 col-sm-6 col-md-3\">
+<div class=\"container-fluid\">
+    <!-- Info boxes -->
+    <div class=\"row\">
+        <!-- Nombre de réservations -->
+        <div class=\"col-12 col-sm-6 col-md-3\">
             <div class=\"info-box\">
-              <span class=\"info-box-icon bg-info elevation-1\"><i class=\"fas fa-cog\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">CPU Traffic</span>
-                <span class=\"info-box-number\">
-                  10
-                  <small>%</small>
-                </span>
-              </div>
-              <!-- /.info-box-content -->
+                <span class=\"info-box-icon bg-info elevation-1\"><i class=\"fas fa-book\"></i></span>
+                <div class=\"info-box-content\">
+                    <span class=\"info-box-text\">Réservations</span>
+                    <span class=\"info-box-number\">{{ reservationsCount }}</span>
+                </div>
             </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class=\"col-12 col-sm-6 col-md-3\">
-            <div class=\"info-box mb-3\">
-              <span class=\"info-box-icon bg-danger elevation-1\"><i class=\"fas fa-thumbs-up\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">Likes</span>
-                <span class=\"info-box-number\">41,410</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-
-          <!-- fix for small devices only -->
-          <div class=\"clearfix hidden-md-up\"></div>
-
-          <div class=\"col-12 col-sm-6 col-md-3\">
-            <div class=\"info-box mb-3\">
-              <span class=\"info-box-icon bg-success elevation-1\"><i class=\"fas fa-shopping-cart\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">Sales</span>
-                <span class=\"info-box-number\">760</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class=\"col-12 col-sm-6 col-md-3\">
-            <div class=\"info-box mb-3\">
-              <span class=\"info-box-icon bg-warning elevation-1\"><i class=\"fas fa-users\"></i></span>
-
-              <div class=\"info-box-content\">
-                <span class=\"info-box-text\">New Members</span>
-                <span class=\"info-box-number\">2,000</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
 
-      
+        <!-- Nombre de lieux de camping -->
+        <div class=\"col-12 col-sm-6 col-md-3\">
+            <div class=\"info-box\">
+                <span class=\"info-box-icon bg-success elevation-1\"><i class=\"fas fa-campground\"></i></span>
+                <div class=\"info-box-content\">
+                    <span class=\"info-box-text\">Lieux de Camping</span>
+                    <span class=\"info-box-number\">{{ lieuxCampingCount }}</span>
+                </div>
+            </div>
+        </div>
 
-       
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
+        <!-- Nombre d'utilisateurs -->
+        <div class=\"col-12 col-sm-6 col-md-3\">
+            <div class=\"info-box\">
+                <span class=\"info-box-icon bg-warning elevation-1\"><i class=\"fas fa-users\"></i></span>
+                <div class=\"info-box-content\">
+                    <span class=\"info-box-text\">Utilisateurs</span>
+                    <span class=\"info-box-number\">{{ utilisateursCount }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphiques -->
+    <div class=\"container-fluid\">
+      <!-- Graphiques Utilisateurs par Région et Répartition des Réservations par Lieu -->
+      <div class=\"row\">
+          <!-- Graphique Utilisateurs par Région -->
+          <div class=\"col-md-6\">
+              <div class=\"card card-info\">
+                  <div class=\"card-header\">
+                      <h3 class=\"card-title\">Utilisateurs par Région</h3>
+                  </div>
+                  <div class=\"card-body\">
+                      <canvas id=\"usersByRegionChart\" style=\"min-height: 250px; height: 250px;\"></canvas>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Graphique Répartition des Réservations par Lieu -->
+          <div class=\"col-md-6\">
+              <div class=\"card card-info\">
+                  <div class=\"card-header\">
+                      <h3 class=\"card-title\">Répartition des Réservations par Lieu</h3>
+                  </div>
+                  <div class=\"card-body\">
+                      <canvas id=\"resparlieuChart\" style=\"min-height: 250px; height: 250px;\"></canvas>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class=\"control-sidebar control-sidebar-dark\">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-  {% endblock body %}
+  
+ {% endblock body %}
   
 <!-- ./wrapper -->
 {% block scripts %}
@@ -975,6 +777,82 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
 <script src=\"{{ asset('admintmp/dist/js/demo.js')}}\"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=\"{{ asset('admintmp/dist/js/pages/dashboard2.js')}}\"></script>
+<script>
+ 
+  // Données pour le graphique des utilisateurs par région
+  const usersByRegionData = {
+      labels: {{ regions|raw }}, 
+      datasets: [{
+          label: 'Utilisateurs',
+          backgroundColor: ['#f46e3f', '#1cffee', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+          borderColor: '#ffffff',
+          borderWidth: 1,
+          data: {{ userCounts|raw }} // Les nombres d'utilisateurs par région
+      }]
+  };
+
+  // Configuration du graphique
+  const usersByRegionOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      },
+      plugins: {
+          legend: {
+              display: false
+          }
+      }
+  };
+
+  // Initialisation du graphique
+  new Chart(document.getElementById('usersByRegionChart'), {
+      type: 'bar', 
+      data: usersByRegionData,
+      options: usersByRegionOptions
+  });
+</script>
+<script>
+ 
+  const resparlieuData = {
+      labels: {{ lieuNames|raw }}, 
+      datasets: [{
+          label: 'Utilisateurs',
+          backgroundColor: ['#b8f43f', '#f56954', '#3ff4e6', '#b8f43f', '#f46e3f', '#3fd3f4'],
+          borderColor: '#ffffff',
+          borderWidth: 1,
+          data: {{ reservationCounts|raw }} 
+      }]
+  };
+
+  // Configuration du graphique
+  const resparlieuOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      },
+      plugins: {
+          legend: {
+              display: false
+          }
+      }
+  };
+
+  // Initialisation du graphique
+  new Chart(document.getElementById('resparlieuChart'), {
+      type: 'pie', // Vous pouvez changer ce type en 'pie' ou 'doughnut' pour d'autres graphiques
+      data: resparlieuData,
+      options: resparlieuOptions
+  });
+  
+</script>
+
+
 {% endblock scripts %}
 </body>
 </html>
