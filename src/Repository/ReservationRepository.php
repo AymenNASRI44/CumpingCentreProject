@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Reservation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Entity\Lieucamping;
 
 /**
  * @extends ServiceEntityRepository<Reservation>
@@ -20,6 +21,22 @@ class ReservationRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Reservation::class);
     }
+    // src/Repository/ReservationRepository.php
+
+public function findActiveReservationsForPlace(Lieucamping $lieuCamping): array
+{
+    $now = new \DateTime();
+
+    return $this->createQueryBuilder('r')
+        ->andWhere('r.lieu_camping = :lieuCamping')
+        ->andWhere('r.date_f >= :now')
+        ->andWhere('r.statut = :statut')
+        ->setParameter('lieuCamping', $lieuCamping)
+        ->setParameter('now', $now)
+        ->setParameter('statut', 'active')
+        ->getQuery()
+        ->getResult();
+}
 
 //    /**
 //     * @return Reservation[] Returns an array of Reservation objects

@@ -38,7 +38,7 @@ class __TwigTemplate_9b5ef0d90b55d2766cf49cedb414de7d1286533551fee64776ea317d6dc
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "admin/dashboard/index.html.twig";
+        return "lieucamping/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_9b5ef0d90b55d2766cf49cedb414de7d1286533551fee64776ea317d6dc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "lieucamping/show.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/dashboard/index.html.twig", "lieucamping/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("lieucamping/index.html.twig", "lieucamping/show.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -97,74 +97,75 @@ class __TwigTemplate_9b5ef0d90b55d2766cf49cedb414de7d1286533551fee64776ea317d6dc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
-        yield "    <h1>Lieucamping</h1>
+        yield "            
 
+  
     <table class=\"table\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 11
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 11, $this->source); })()), "id", [], "any", false, false, false, 11), "html", null, true);
+        // line 12
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Nom</th>
                 <td>";
-        // line 15
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 15, $this->source); })()), "nom", [], "any", false, false, false, 15), "html", null, true);
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 16, $this->source); })()), "nom", [], "any", false, false, false, 16), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>";
-        // line 19
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 19, $this->source); })()), "description", [], "any", false, false, false, 19), "html", null, true);
+        // line 20
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 20, $this->source); })()), "description", [], "any", false, false, false, 20), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Coordonner</th>
                 <td>";
-        // line 23
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 23, $this->source); })()), "coordonner", [], "any", false, false, false, 23), "html", null, true);
+        // line 24
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 24, $this->source); })()), "coordonner", [], "any", false, false, false, 24), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Photo</th>
                 <td>";
-        // line 27
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 27, $this->source); })()), "photo", [], "any", false, false, false, 27), "html", null, true);
+        // line 28
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 28, $this->source); })()), "photo", [], "any", false, false, false, 28), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Capacite</th>
                 <td>";
-        // line 31
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 31, $this->source); })()), "capacite", [], "any", false, false, false, 31), "html", null, true);
+        // line 32
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 32, $this->source); })()), "capacite", [], "any", false, false, false, 32), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>PlacesRestantes</th>
                 <td>";
-        // line 35
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 35, $this->source); })()), "PlacesRestantes", [], "any", false, false, false, 35), "html", null, true);
+        // line 36
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 36, $this->source); })()), "PlacesRestantes", [], "any", false, false, false, 36), "html", null, true);
         yield "</td>
             </tr>
         </tbody>
     </table>
 
     <a href=\"";
-        // line 40
+        // line 41
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_index");
         yield "\">back to list</a>
 
     <a href=\"";
-        // line 42
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 42, $this->source); })()), "id", [], "any", false, false, false, 42)]), "html", null, true);
+        // line 43
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["lieucamping"]) || array_key_exists("lieucamping", $context) ? $context["lieucamping"] : (function () { throw new RuntimeError('Variable "lieucamping" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43)]), "html", null, true);
         yield "\">edit</a>
 
     ";
-        // line 44
+        // line 45
         yield Twig\Extension\CoreExtension::include($this->env, $context, "lieucamping/_delete_form.html.twig");
         yield "
 ";
@@ -198,17 +199,18 @@ class __TwigTemplate_9b5ef0d90b55d2766cf49cedb414de7d1286533551fee64776ea317d6dc
      */
     public function getDebugInfo(): array
     {
-        return array (  168 => 44,  163 => 42,  158 => 40,  150 => 35,  143 => 31,  136 => 27,  129 => 23,  122 => 19,  115 => 15,  108 => 11,  100 => 5,  87 => 4,  64 => 2,  41 => 1,);
+        return array (  169 => 45,  164 => 43,  159 => 41,  151 => 36,  144 => 32,  137 => 28,  130 => 24,  123 => 20,  116 => 16,  109 => 12,  100 => 5,  87 => 4,  64 => 2,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'admin/dashboard/index.html.twig' %}
+        return new Source("{% extends 'lieucamping/index.html.twig' %}
 {% block title %}Lieucamping{% endblock %}
 
 {% block body %}
-    <h1>Lieucamping</h1>
+            
 
+  
     <table class=\"table\">
         <tbody>
             <tr>

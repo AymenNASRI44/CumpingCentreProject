@@ -45,7 +45,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('nom_region', EntityType::class, [
+            ->add('id_region', EntityType::class, [
                 'class' => Region::class,
                 'choice_label' => 'nom_region',
                 'mapped' => true,

@@ -15,8 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'app_admin_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
         '/admin/statistics' => [[['_route' => 'admin_statistics', '_controller' => 'App\\Controller\\Admin\\StatisticsController::index'], null, null, null, false, false, null]],
-        '/crud/reservation' => [[['_route' => 'app_crud_reservation_index', '_controller' => 'App\\Controller\\CrudReservationController::index'], null, ['GET' => 0], null, true, false, null]],
-        '/crud/reservation/new' => [[['_route' => 'app_crud_reservation_new', '_controller' => 'App\\Controller\\CrudReservationController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/lieu' => [
             [['_route' => 'app_lieu_camping', '_controller' => 'App\\Controller\\LieuCampingContlollerController::index'], null, null, null, false, false, null],
@@ -25,6 +24,8 @@ return [
         '/lieucamping' => [[['_route' => 'app_lieucamping_index', '_controller' => 'App\\Controller\\LieucampingController::index'], null, ['GET' => 0], null, true, false, null]],
         '/lieucamping/new' => [[['_route' => 'app_lieucamping_new', '_controller' => 'App\\Controller\\LieucampingController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/reservation/crud' => [[['_route' => 'app_reservation_crud_index', '_controller' => 'App\\Controller\\ReservationCrudController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/reservation/crud/new' => [[['_route' => 'app_reservation_crud_new', '_controller' => 'App\\Controller\\ReservationCrudController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/user' => [[['_route' => 'app_user_index', '_controller' => 'App\\Controller\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -47,27 +48,29 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/crud/reservation/([^/]++)(?'
-                    .'|(*:198)'
-                    .'|/edit(*:211)'
-                    .'|(*:219)'
-                .')'
                 .'|/lieu(?'
                     .'|/([^/]++)(?'
-                        .'|(*:248)'
-                        .'|/avis(*:261)'
+                        .'|(*:189)'
+                        .'|/avis(*:202)'
                     .')'
                     .'|camping/([^/]++)(?'
-                        .'|(*:289)'
-                        .'|/edit(*:302)'
-                        .'|(*:310)'
+                        .'|(*:230)'
+                        .'|/edit(*:243)'
+                        .'|(*:251)'
                     .')'
                 .')'
-                .'|/reservation/([^/]++)(*:341)'
+                .'|/reservation/(?'
+                    .'|(\\d+)(*:282)'
+                    .'|crud/([^/]++)(?'
+                        .'|(*:306)'
+                        .'|/edit(*:319)'
+                        .'|(*:327)'
+                    .')'
+                .')'
                 .'|/user/([^/]++)(?'
-                    .'|(*:366)'
-                    .'|/edit(*:379)'
-                    .'|(*:387)'
+                    .'|(*:354)'
+                    .'|/edit(*:367)'
+                    .'|(*:375)'
                 .')'
             .')/?$}sDu',
     ],
@@ -79,18 +82,18 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        198 => [[['_route' => 'app_crud_reservation_show', '_controller' => 'App\\Controller\\CrudReservationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        211 => [[['_route' => 'app_crud_reservation_edit', '_controller' => 'App\\Controller\\CrudReservationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        219 => [[['_route' => 'app_crud_reservation_delete', '_controller' => 'App\\Controller\\CrudReservationController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        248 => [[['_route' => 'app_lieu_camping_detail', '_controller' => 'App\\Controller\\LieuCampingContlollerController::detail'], ['id'], null, null, false, true, null]],
-        261 => [[['_route' => 'app_avis', '_controller' => 'App\\Controller\\LieuCampingContlollerController::donnerAvis'], ['id'], null, null, false, false, null]],
-        289 => [[['_route' => 'app_lieucamping_show', '_controller' => 'App\\Controller\\LieucampingController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        302 => [[['_route' => 'app_lieucamping_edit', '_controller' => 'App\\Controller\\LieucampingController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        310 => [[['_route' => 'app_lieucamping_delete', '_controller' => 'App\\Controller\\LieucampingController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        341 => [[['_route' => 'app_reservation', '_controller' => 'App\\Controller\\ReservationController::reservation'], ['id'], null, null, false, true, null]],
-        366 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        379 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        387 => [
+        189 => [[['_route' => 'app_lieu_camping_detail', '_controller' => 'App\\Controller\\LieuCampingContlollerController::detail'], ['id'], null, null, false, true, null]],
+        202 => [[['_route' => 'app_avis', '_controller' => 'App\\Controller\\LieuCampingContlollerController::donnerAvis'], ['id'], null, null, false, false, null]],
+        230 => [[['_route' => 'app_lieucamping_show', '_controller' => 'App\\Controller\\LieucampingController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        243 => [[['_route' => 'app_lieucamping_edit', '_controller' => 'App\\Controller\\LieucampingController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        251 => [[['_route' => 'app_lieucamping_delete', '_controller' => 'App\\Controller\\LieucampingController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        282 => [[['_route' => 'app_reservation', '_controller' => 'App\\Controller\\ReservationController::reservation'], ['id'], null, null, false, true, null]],
+        306 => [[['_route' => 'app_reservation_crud_show', '_controller' => 'App\\Controller\\ReservationCrudController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        319 => [[['_route' => 'app_reservation_crud_edit', '_controller' => 'App\\Controller\\ReservationCrudController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        327 => [[['_route' => 'app_reservation_crud_delete', '_controller' => 'App\\Controller\\ReservationCrudController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        354 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        367 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        375 => [
             [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -32,23 +32,54 @@ class LieucampingController extends AbstractController
 
     #[Route('/new', name: 'app_lieucamping_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $lieucamping = new Lieucamping();
-        $form = $this->createForm(LieucampingType::class, $lieucamping);
-        $form->handleRequest($request);
+{
+    $lieucamping = new Lieucamping();
+    $form = $this->createForm(LieucampingType::class, $lieucamping);
+    $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($lieucamping);
-            $entityManager->flush();
+    // Si le formulaire est soumis et valide
+    if ($form->isSubmitted() && $form->isValid()) {
+        /** @var UploadedFile $photoFile */
+        $photoFile = $form->get('photo')->getData();
 
-            return $this->redirectToRoute('app_lieucamping_index', [], Response::HTTP_SEE_OTHER);
+        // Vérifiez si un fichier a été téléchargé
+        if ($photoFile) {
+            // Créez un nom unique pour le fichier
+            $newFilename = uniqid().'.'.$photoFile->guessExtension();
+
+            try {
+                // Déplacez le fichier dans le répertoire configuré
+                $photoFile->move(
+                    $this->getParameter('assets_img'), // Paramètre à définir dans `services.yaml`
+                    $newFilename
+                );
+
+                // Mettez à jour l'entité avec le nom du fichier
+                $lieucamping->setPhoto($newFilename);
+            } catch (FileException $e) {
+                // Gérer les erreurs liées au téléchargement
+                $this->addFlash('error', 'Erreur lors du téléchargement de la photo.');
+                return $this->redirectToRoute('app_lieucamping_new'); // Rediriger en cas d'erreur
+            }
         }
 
-        return $this->renderForm('lieucamping/new.html.twig', [
-            'lieucamping' => $lieucamping,
-            'form' => $form,
-        ]);
+        // Persister l'objet Lieucamping dans la base de données
+        $entityManager->persist($lieucamping);
+        $entityManager->flush();
+
+        // Message de confirmation
+        $this->addFlash('success', 'Le centre de camping a été ajouté avec succès.');
+
+        // Redirection après succès
+        return $this->redirectToRoute('app_lieucamping_index');
     }
+
+    // Rendre le formulaire en cas de non soumission ou d'erreur
+    return $this->renderForm('lieucamping/new.html.twig', [
+        'lieucamping' => $lieucamping,
+        'form' => $form,
+    ]);
+}
 
     #[Route('/{id}', name: 'app_lieucamping_show', methods: ['GET'])]
     public function show(Lieucamping $lieucamping): Response

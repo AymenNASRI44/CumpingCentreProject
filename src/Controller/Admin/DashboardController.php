@@ -52,6 +52,8 @@ class DashboardController extends AbstractController
             $regions[] = $stat['region_name'];
             $userCounts[] = $stat['user_count'];
         }
+        //nombre de lieu de camping par region
+        $lieucampingRepository = $entityManager->getRepository(Lieucamping::class);
 
         return $this->render('admin/dashboard/index.html.twig', [
             'reservationsCount' => $reservationsCount,

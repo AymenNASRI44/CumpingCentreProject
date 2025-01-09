@@ -38,7 +38,7 @@ class __TwigTemplate_9aba8314466d02f6111f753dbcb2e69ea773d2749d9beda958aa01d666e
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "admin/dashboard/index.html.twig";
+        return "user/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_9aba8314466d02f6111f753dbcb2e69ea773d2749d9beda958aa01d666e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/show.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/dashboard/index.html.twig", "user/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("user/index.html.twig", "user/show.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -203,7 +203,7 @@ class __TwigTemplate_9aba8314466d02f6111f753dbcb2e69ea773d2749d9beda958aa01d666e
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'admin/dashboard/index.html.twig' %}
+        return new Source("{% extends 'user/index.html.twig' %}
 
 {% block title %}User{% endblock %}
 

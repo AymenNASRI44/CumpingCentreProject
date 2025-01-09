@@ -3,11 +3,31 @@
 {% block title %}Réserver un lieu{% endblock %}
 
 {% block body %}
-    <h1>Réserver : {{ lieu.nom }}</h1>
-    {{ form_start(form) }}
-        {{ form_row(form.date_d) }}
-        {{ form_row(form.date_f) }}
-        {{ form_row(form.nombre_personnes) }}
-        {{ form_row(form.submit) }}
-    {{ form_end(form) }}
+<div class="container my-5">
+    <h1 class="mb-4">Réserver : {{ lieu.nom }}</h1>
+    <div class="card shadow">
+        <div class="card-body">
+            {{ form_start(form, { 'attr': {'class': 'needs-validation'} }) }}
+                <div class="mb-3">
+                    {{ form_label(form.date_d, 'Date de début', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.date_d, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.date_d) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(form.date_f, 'Date de fin', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.date_f, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.date_f) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(form.nombre_personnes, 'Nombre de personnes', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.nombre_personnes, {'attr': {'class': 'form-control', 'min': 1}}) }}
+                    {{ form_errors(form.nombre_personnes) }}
+                </div>
+                <div class="d-grid">
+                    {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
 {% endblock %}

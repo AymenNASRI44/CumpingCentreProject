@@ -18,11 +18,12 @@ class UserType extends AbstractType
             ->add('password')
             ->add('nom')
             ->add('prenom'  )
-            ->add('nom_region', EntityType::class, [
-                'class' => Region::class,  
-                'choice_label' => 'nom_region',  
-                'placeholder' => 'Sélectionner une région',  
-                'required' => true,  
+            ->add('id_region', EntityType::class, [
+                'class' => Region::class,  // Spécifiez la classe de l'entité associée
+                'choice_label' => 'nom_region',  // Utilisez ici la propriété de la région à afficher
+                'label' => 'Région',
+                'placeholder' => 'Choisir une région',  // Optionnel : message pour le champ vide
+                'required' => true,
             ]);
     } 
 

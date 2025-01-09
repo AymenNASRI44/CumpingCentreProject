@@ -16,6 +16,7 @@
 
 
 {% block body %}
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -43,11 +44,13 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="{{ path('app_lieucamping_index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-mountain"></i>
-                                <p>Centre de camping</p>
+                            <a href="{{ path('app_reservation_crud_index') }}" class="nav-link">
+                              <i class="nav-icon fas fa-calendar"></i>
+                              <p>
+                                Reservation 
+                              </p>
                             </a>
-                        </li>
+                          </li>
                         <li class="nav-item">
                             <a href="{{ path('app_user_index') }}" class="nav-link">
                                 <i class="nav-icon far fa-user"></i>
@@ -96,6 +99,7 @@
                                                 <th>Photo</th>
                                                 <th>Capacité</th>
                                                 <th>Places Restantes</th>
+                                                <th>Region</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -115,10 +119,20 @@
                                                     </td>
                                                     <td>{{ lieucamping.capacite }}</td>
                                                     <td>{{ lieucamping.PlacesRestantes }}</td>
+                                                    <td>{{ lieucamping.RegionId.NomRegion }}</td>
                                                     <td>
-                                                        <a href="{{ path('app_lieucamping_show', {'id': lieucamping.id}) }}" class="btn btn-info btn-sm">Show</a>
-                                                        <a href="{{ path('app_lieucamping_edit', {'id': lieucamping.id}) }}" class="btn btn-warning btn-sm">Edit</a>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <!-- Bouton Modifier -->
+                                                            <a href="{{ path('app_lieucamping_edit', {'id': lieucamping.id}) }}" class="btn btn-warning btn-sm">Modifier</a>
+                                                    
+                                                            <!-- Formulaire Suppression -->
+                                                            <form method="post" action="{{ path('app_lieucamping_delete', {'id': lieucamping.id}) }}" class="delete-form m-0 p-0">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ lieucamping.id) }}">
+                                                                <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="{{ lieucamping.id }}">Supprimer</button>
+                                                            </form>
+                                                        </div>
                                                     </td>
+                                                    
                                                 </tr>
                                             {% else %}
                                                 <tr>
@@ -173,4 +187,40 @@
 <script src="{{ asset('admintmp/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('admintmp/dist/js/pages/dashboard2.js')}}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Sélectionner tous les boutons de suppression
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+    
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+    
+                const form = button.closest('form'); // Trouver le formulaire associé
+                const lieucampingId = button.getAttribute('data-id'); // ID du lieu
+    
+                // Afficher SweetAlert
+                Swal.fire({
+                    title: 'Êtes-vous sûr ?',
+                    text: "Cette action est irréversible.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Oui, supprimer',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Soumettre le formulaire si confirmé
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>    
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 {% endblock scripts %}
+</body>
+</html>

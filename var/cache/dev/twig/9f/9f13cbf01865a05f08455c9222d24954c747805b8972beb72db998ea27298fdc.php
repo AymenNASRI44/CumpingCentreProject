@@ -52,7 +52,7 @@ class __TwigTemplate_48b7b3b9a829a6ce50f777f24b262f852dc41189ddece5f936ea2d3e35e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/page/login_minimal.html.twig"));
 
         // line 3
-        $context["__internal_c3412a6ad0e70e13f176375186f7a0413c68c797f4a2ea1620dce8282eb9724e"] = (($context["translation_domain"]) ?? ("messages"));
+        $context["__internal_5fa0ec9c7b61707628b7a83da06fa93d521506eb4d677aa0357487d117134354"] = (($context["translation_domain"]) ?? ("messages"));
         // line 4
         yield "<!DOCTYPE html>
 <html>

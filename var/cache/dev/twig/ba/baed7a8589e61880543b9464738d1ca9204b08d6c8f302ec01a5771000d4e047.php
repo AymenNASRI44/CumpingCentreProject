@@ -57,16 +57,20 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
 ";
         // line 18
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 141
+        // line 155
         yield "
 ";
-        // line 142
+        // line 156
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 151
+        // line 165
         yield "<!-- ./wrapper -->
 ";
-        // line 152
+        // line 166
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
+        // line 225
+        yield "</body>
+</html>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -144,7 +148,8 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 19
-        yield "    <div class=\"wrapper\">
+        yield "<body class=\"hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed\">
+    <div class=\"wrapper\">
         <!-- Navbar -->
         <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\">
             <ul class=\"navbar-nav\">
@@ -153,13 +158,13 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
                 </li>
                 <li class=\"nav-item d-none d-sm-inline-block\">
                     <a href=\"";
-        // line 27
+        // line 28
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         yield "\" class=\"nav-link\">Home</a>
                 </li>
                 <li class=\"nav-item d-none d-sm-inline-block\">
                     <a href=\"";
-        // line 30
+        // line 31
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_dashboard");
         yield "\" class=\"nav-link\">dashborad</a>
                 </li>
@@ -172,7 +177,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
                 <div class=\"user-panel mt-3 pb-3 mb-3 d-flex\">
                     <div class=\"info\">
                         <a href=\"";
-        // line 40
+        // line 41
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         yield "\" class=\"d-block\">Camping Center</a>
                     </div>
@@ -181,16 +186,18 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
                     <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
                         <li class=\"nav-item\">
                             <a href=\"";
-        // line 46
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_index");
+        // line 47
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_crud_index");
         yield "\" class=\"nav-link\">
-                                <i class=\"nav-icon fas fa-mountain\"></i>
-                                <p>Centre de camping</p>
+                              <i class=\"nav-icon fas fa-calendar\"></i>
+                              <p>
+                                Reservation 
+                              </p>
                             </a>
-                        </li>
+                          </li>
                         <li class=\"nav-item\">
                             <a href=\"";
-        // line 52
+        // line 55
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\" class=\"nav-link\">
                                 <i class=\"nav-icon far fa-user\"></i>
@@ -239,74 +246,94 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
                                                 <th>Photo</th>
                                                 <th>Capacité</th>
                                                 <th>Places Restantes</th>
+                                                <th>Region</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             ";
-        // line 103
+        // line 107
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["lieucampings"]) || array_key_exists("lieucampings", $context) ? $context["lieucampings"] : (function () { throw new RuntimeError('Variable "lieucampings" does not exist.', 103, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["lieucampings"]) || array_key_exists("lieucampings", $context) ? $context["lieucampings"] : (function () { throw new RuntimeError('Variable "lieucampings" does not exist.', 107, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["lieucamping"]) {
-            // line 104
+            // line 108
             yield "                                                <tr>
                                                     <td>";
-            // line 105
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 105), "html", null, true);
+            // line 109
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 109), "html", null, true);
             yield "</td>
                                                     <td>";
-            // line 106
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "nom", [], "any", false, false, false, 106), "html", null, true);
+            // line 110
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "nom", [], "any", false, false, false, 110), "html", null, true);
             yield "</td>
                                                     <td>";
-            // line 107
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "description", [], "any", false, false, false, 107);
+            // line 111
+            yield CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "description", [], "any", false, false, false, 111);
             yield "</td>
                                                     <td>";
-            // line 108
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "coordonner", [], "any", false, false, false, 108), "html", null, true);
+            // line 112
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "coordonner", [], "any", false, false, false, 112), "html", null, true);
             yield "</td>
                                                     <td>
                                                         ";
-            // line 110
-            if (CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "photo", [], "any", false, false, false, 110)) {
-                // line 111
+            // line 114
+            if (CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "photo", [], "any", false, false, false, 114)) {
+                // line 115
                 yield "                                                            <img src=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "photo", [], "any", false, false, false, 111))), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/photos/" . CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "photo", [], "any", false, false, false, 115))), "html", null, true);
                 yield "\" alt=\"Photo\" width=\"50\" height=\"50\">
                                                         ";
             } else {
-                // line 113
+                // line 117
                 yield "                                                            <span>No Photo</span>
                                                         ";
             }
-            // line 115
+            // line 119
             yield "                                                    </td>
                                                     <td>";
-            // line 116
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "capacite", [], "any", false, false, false, 116), "html", null, true);
+            // line 120
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "capacite", [], "any", false, false, false, 120), "html", null, true);
             yield "</td>
                                                     <td>";
-            // line 117
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "PlacesRestantes", [], "any", false, false, false, 117), "html", null, true);
+            // line 121
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "PlacesRestantes", [], "any", false, false, false, 121), "html", null, true);
+            yield "</td>
+                                                    <td>";
+            // line 122
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "RegionId", [], "any", false, false, false, 122), "NomRegion", [], "any", false, false, false, 122), "html", null, true);
             yield "</td>
                                                     <td>
-                                                        <a href=\"";
-            // line 119
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 119)]), "html", null, true);
-            yield "\" class=\"btn btn-info btn-sm\">Show</a>
-                                                        <a href=\"";
-            // line 120
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 120)]), "html", null, true);
-            yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
+                                                        <div class=\"d-flex align-items-center gap-2\">
+                                                            <!-- Bouton Modifier -->
+                                                            <a href=\"";
+            // line 126
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 126)]), "html", null, true);
+            yield "\" class=\"btn btn-warning btn-sm\">Modifier</a>
+                                                    
+                                                            <!-- Formulaire Suppression -->
+                                                            <form method=\"post\" action=\"";
+            // line 129
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 129)]), "html", null, true);
+            yield "\" class=\"delete-form m-0 p-0\">
+                                                                <input type=\"hidden\" name=\"_token\" value=\"";
+            // line 130
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 130))), "html", null, true);
+            yield "\">
+                                                                <button type=\"button\" class=\"btn btn-danger btn-sm delete-btn\" data-id=\"";
+            // line 131
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["lieucamping"], "id", [], "any", false, false, false, 131), "html", null, true);
+            yield "\">Supprimer</button>
+                                                            </form>
+                                                        </div>
                                                     </td>
+                                                    
                                                 </tr>
                                             ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 124
+            // line 138
             yield "                                                <tr>
                                                     <td colspan=\"8\">No records found</td>
                                                 </tr>
@@ -315,7 +342,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['lieucamping'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 128
+        // line 142
         yield "                                        </tbody>
                                     </table>
                                 </div>
@@ -326,7 +353,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
             </section>
 
             <a href=\"";
-        // line 137
+        // line 151
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_new");
         yield "\" class=\"btn btn-success\">Create new</a>
         </div>
@@ -341,7 +368,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
         yield from [];
     }
 
-    // line 142
+    // line 156
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -354,7 +381,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 143
+        // line 157
         yield "    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <script src=\"https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js\"></script>
     <script>
@@ -372,7 +399,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
         yield from [];
     }
 
-    // line 152
+    // line 166
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -385,63 +412,97 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 153
+        // line 167
         yield "<!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src=\"";
-        // line 155
+        // line 169
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery/jquery.min.js"), "html", null, true);
         yield "\"></script>
 <!-- Bootstrap -->
 <script src=\"";
-        // line 157
+        // line 171
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         yield "\"></script>
 <!-- overlayScrollbars -->
 <script src=\"";
-        // line 159
+        // line 173
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE App -->
 <script src=\"";
-        // line 161
+        // line 175
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/adminlte.js"), "html", null, true);
         yield "\"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src=\"";
-        // line 165
+        // line 179
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mousewheel/jquery.mousewheel.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 166
+        // line 180
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/raphael/raphael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 167
+        // line 181
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/jquery.mapael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 168
+        // line 182
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/maps/usa_states.min.js"), "html", null, true);
         yield "\"></script>
 <!-- ChartJS -->
 <script src=\"";
-        // line 170
+        // line 184
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/chart.js/Chart.min.js"), "html", null, true);
         yield "\"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src=\"";
-        // line 173
+        // line 187
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/demo.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=\"";
-        // line 175
+        // line 189
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/pages/dashboard2.js"), "html", null, true);
         yield "\"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Sélectionner tous les boutons de suppression
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+    
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+    
+                const form = button.closest('form'); // Trouver le formulaire associé
+                const lieucampingId = button.getAttribute('data-id'); // ID du lieu
+    
+                // Afficher SweetAlert
+                Swal.fire({
+                    title: 'Êtes-vous sûr ?',
+                    text: \"Cette action est irréversible.\",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Oui, supprimer',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Soumettre le formulaire si confirmé
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>    
+<script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -465,7 +526,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
      */
     public function getDebugInfo(): array
     {
-        return array (  443 => 175,  438 => 173,  432 => 170,  427 => 168,  423 => 167,  419 => 166,  415 => 165,  408 => 161,  403 => 159,  398 => 157,  393 => 155,  389 => 153,  376 => 152,  358 => 143,  345 => 142,  330 => 137,  319 => 128,  310 => 124,  301 => 120,  297 => 119,  292 => 117,  288 => 116,  285 => 115,  281 => 113,  275 => 111,  273 => 110,  268 => 108,  264 => 107,  260 => 106,  256 => 105,  253 => 104,  248 => 103,  194 => 52,  185 => 46,  176 => 40,  163 => 30,  157 => 27,  147 => 19,  134 => 18,  120 => 12,  116 => 11,  112 => 10,  108 => 9,  103 => 7,  98 => 5,  93 => 2,  80 => 1,  69 => 152,  66 => 151,  64 => 142,  61 => 141,  59 => 18,  54 => 15,  52 => 1,);
+        return array (  470 => 189,  465 => 187,  459 => 184,  454 => 182,  450 => 181,  446 => 180,  442 => 179,  435 => 175,  430 => 173,  425 => 171,  420 => 169,  416 => 167,  403 => 166,  385 => 157,  372 => 156,  357 => 151,  346 => 142,  337 => 138,  325 => 131,  321 => 130,  317 => 129,  311 => 126,  304 => 122,  300 => 121,  296 => 120,  293 => 119,  289 => 117,  283 => 115,  281 => 114,  276 => 112,  272 => 111,  268 => 110,  264 => 109,  261 => 108,  256 => 107,  201 => 55,  190 => 47,  181 => 41,  168 => 31,  162 => 28,  151 => 19,  138 => 18,  124 => 12,  120 => 11,  116 => 10,  112 => 9,  107 => 7,  102 => 5,  97 => 2,  84 => 1,  71 => 225,  69 => 166,  66 => 165,  64 => 156,  61 => 155,  59 => 18,  54 => 15,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -488,6 +549,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
 
 
 {% block body %}
+<body class=\"hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed\">
     <div class=\"wrapper\">
         <!-- Navbar -->
         <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\">
@@ -515,11 +577,13 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
                 <nav class=\"mt-2\">
                     <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
                         <li class=\"nav-item\">
-                            <a href=\"{{ path('app_lieucamping_index') }}\" class=\"nav-link\">
-                                <i class=\"nav-icon fas fa-mountain\"></i>
-                                <p>Centre de camping</p>
+                            <a href=\"{{ path('app_reservation_crud_index') }}\" class=\"nav-link\">
+                              <i class=\"nav-icon fas fa-calendar\"></i>
+                              <p>
+                                Reservation 
+                              </p>
                             </a>
-                        </li>
+                          </li>
                         <li class=\"nav-item\">
                             <a href=\"{{ path('app_user_index') }}\" class=\"nav-link\">
                                 <i class=\"nav-icon far fa-user\"></i>
@@ -568,6 +632,7 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
                                                 <th>Photo</th>
                                                 <th>Capacité</th>
                                                 <th>Places Restantes</th>
+                                                <th>Region</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -587,10 +652,20 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
                                                     </td>
                                                     <td>{{ lieucamping.capacite }}</td>
                                                     <td>{{ lieucamping.PlacesRestantes }}</td>
+                                                    <td>{{ lieucamping.RegionId.NomRegion }}</td>
                                                     <td>
-                                                        <a href=\"{{ path('app_lieucamping_show', {'id': lieucamping.id}) }}\" class=\"btn btn-info btn-sm\">Show</a>
-                                                        <a href=\"{{ path('app_lieucamping_edit', {'id': lieucamping.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
+                                                        <div class=\"d-flex align-items-center gap-2\">
+                                                            <!-- Bouton Modifier -->
+                                                            <a href=\"{{ path('app_lieucamping_edit', {'id': lieucamping.id}) }}\" class=\"btn btn-warning btn-sm\">Modifier</a>
+                                                    
+                                                            <!-- Formulaire Suppression -->
+                                                            <form method=\"post\" action=\"{{ path('app_lieucamping_delete', {'id': lieucamping.id}) }}\" class=\"delete-form m-0 p-0\">
+                                                                <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ lieucamping.id) }}\">
+                                                                <button type=\"button\" class=\"btn btn-danger btn-sm delete-btn\" data-id=\"{{ lieucamping.id }}\">Supprimer</button>
+                                                            </form>
+                                                        </div>
                                                     </td>
+                                                    
                                                 </tr>
                                             {% else %}
                                                 <tr>
@@ -645,7 +720,43 @@ class __TwigTemplate_9ba2c5465d98f0c1043307c564d4a4cadb34a192a5f105f4d060146eda1
 <script src=\"{{ asset('admintmp/dist/js/demo.js')}}\"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=\"{{ asset('admintmp/dist/js/pages/dashboard2.js')}}\"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Sélectionner tous les boutons de suppression
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+    
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+    
+                const form = button.closest('form'); // Trouver le formulaire associé
+                const lieucampingId = button.getAttribute('data-id'); // ID du lieu
+    
+                // Afficher SweetAlert
+                Swal.fire({
+                    title: 'Êtes-vous sûr ?',
+                    text: \"Cette action est irréversible.\",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Oui, supprimer',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Soumettre le formulaire si confirmé
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>    
+<script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
+
 {% endblock scripts %}
+</body>
+</html>
 ", "lieucamping/index.html.twig", "C:\\xampp\\htdocs\\projetC\\templates\\lieucamping\\index.html.twig");
     }
 }

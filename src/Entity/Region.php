@@ -18,11 +18,12 @@ class Region
     #[ORM\Column(length: 255)]
     private ?string $nom_region = null;
 
-    #[ORM\OneToMany(mappedBy: 'nom_region', targetEntity: User::class)]
-    private Collection $users;
-
+   
     #[ORM\OneToMany(mappedBy: 'region_id', targetEntity: Lieucamping::class)]
     private Collection $lieucampings;
+
+    #[ORM\OneToMany(mappedBy: 'id_region', targetEntity: User::class)]
+    private Collection $users;
 
     public function __construct()
     {
@@ -50,32 +51,7 @@ class Region
     /**
      * @return Collection<int, User>
      */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
-
-    public function addUser(User $user): static
-    {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->setNomRegion($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): static
-    {
-        if ($this->users->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getNomRegion() === $this) {
-                $user->setNomRegion(null);
-            }
-        }
-
-        return $this;
-    }
+   
 
     /**
      * @return Collection<int, Lieucamping>
@@ -101,6 +77,36 @@ class Region
             // set the owning side to null (unless already changed)
             if ($lieucamping->getRegionId() === $this) {
                 $lieucamping->setRegionId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): static
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->setIdRegion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): static
+    {
+        if ($this->users->removeElement($user)) {
+            // set the owning side to null (unless already changed)
+            if ($user->getIdRegion() === $this) {
+                $user->setIdRegion(null);
             }
         }
 

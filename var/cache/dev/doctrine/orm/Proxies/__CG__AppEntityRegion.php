@@ -67,10 +67,10 @@ class Region extends \App\Entity\Region implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'nom_region', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'lieucampings'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'nom_region', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'lieucampings', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'users'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'nom_region', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'lieucampings'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'nom_region', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'lieucampings', '' . "\0" . 'App\\Entity\\Region' . "\0" . 'users'];
     }
 
     /**
@@ -217,39 +217,6 @@ class Region extends \App\Entity\Region implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getUsers(): \Doctrine\Common\Collections\Collection
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsers', []);
-
-        return parent::getUsers();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addUser(\App\Entity\User $user): static
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addUser', [$user]);
-
-        return parent::addUser($user);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeUser(\App\Entity\User $user): static
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUser', [$user]);
-
-        return parent::removeUser($user);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getLieucampings(): \Doctrine\Common\Collections\Collection
     {
 
@@ -278,6 +245,39 @@ class Region extends \App\Entity\Region implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeLieucamping', [$lieucamping]);
 
         return parent::removeLieucamping($lieucamping);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsers(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsers', []);
+
+        return parent::getUsers();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addUser(\App\Entity\User $user): static
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addUser', [$user]);
+
+        return parent::addUser($user);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeUser(\App\Entity\User $user): static
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUser', [$user]);
+
+        return parent::removeUser($user);
     }
 
 }

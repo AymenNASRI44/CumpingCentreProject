@@ -1,19 +1,48 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('loginstyle/styleregister.css') }}">
+{% endblock %}
 {% block body %}
     <h1>Register</h1>
-
+    <div class="wrapper">
+    
+        <h2>Inscription</h2>
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+    <div class="input-field">
+        {{ form_row(registrationForm.email, {
+            attr: { placeholder: 'Entrez votre email', class: 'form-control' }
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
+    </div>
+    <div class="input-field">
+        {{ form_row(registrationForm.nom, {
+            attr: { placeholder: 'Entrez votre nom', class: 'form-control' }
+        }) }}  
+    </div>
+    <div class="input-field">
+        {{ form_row(registrationForm.prenom, {
+            attr: { placeholder: 'Entrez votre prénom', class: 'form-control' }
+        }) }}
+    </div>
+    <div class="input-field">
+        {{ form_row(registrationForm.id_region, {
+            attr: { class: 'form-control select-field custom-select' }
+        }) }}
+    </div>
+    <div class="input-field">
+        {{ form_row(registrationForm.plainPassword, {
+            attr: { placeholder: 'Entrez votre mot de passe', class: 'form-control' }
+        }) }}
+    </div>
+    <div class="forget">
+        {{ form_widget(registrationForm.agreeTerms) }}
+      
+    </div>
+    <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
+       

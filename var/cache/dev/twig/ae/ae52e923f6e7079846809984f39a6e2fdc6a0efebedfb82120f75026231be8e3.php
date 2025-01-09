@@ -188,7 +188,10 @@ class __TwigTemplate_33261ec038afb9d04ae373235e564b4d7d2db3b122f77245edb0b1f91e7
                 <ul class=\"navbar-nav ms-auto\">
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"#about\">About</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"#projects\">Camp Center</a></li>
-                    <li class=\"nav-item\"><a class=\"nav-link\" href=\"#signup\">Contact</a></li>
+                    <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
+        // line 39
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
+        yield "\">Contact</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"#service\">Service</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
         // line 41
@@ -521,7 +524,7 @@ class __TwigTemplate_33261ec038afb9d04ae373235e564b4d7d2db3b122f77245edb0b1f91e7
      */
     public function getDebugInfo(): array
     {
-        return array (  496 => 265,  477 => 248,  464 => 247,  321 => 112,  317 => 110,  302 => 104,  291 => 98,  288 => 97,  283 => 96,  281 => 95,  268 => 85,  257 => 77,  237 => 60,  225 => 50,  212 => 49,  195 => 41,  181 => 30,  176 => 27,  163 => 26,  149 => 21,  136 => 20,  124 => 23,  122 => 20,  109 => 10,  101 => 4,  88 => 3,  76 => 270,  74 => 247,  70 => 245,  68 => 49,  64 => 47,  62 => 26,  59 => 25,  57 => 3,  53 => 1,);
+        return array (  499 => 265,  480 => 248,  467 => 247,  324 => 112,  320 => 110,  305 => 104,  294 => 98,  291 => 97,  286 => 96,  284 => 95,  271 => 85,  260 => 77,  240 => 60,  228 => 50,  215 => 49,  198 => 41,  193 => 39,  181 => 30,  176 => 27,  163 => 26,  149 => 21,  136 => 20,  124 => 23,  122 => 20,  109 => 10,  101 => 4,  88 => 3,  76 => 270,  74 => 247,  70 => 245,  68 => 49,  64 => 47,  62 => 26,  59 => 25,  57 => 3,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -564,7 +567,7 @@ class __TwigTemplate_33261ec038afb9d04ae373235e564b4d7d2db3b122f77245edb0b1f91e7
                 <ul class=\"navbar-nav ms-auto\">
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"#about\">About</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"#projects\">Camp Center</a></li>
-                    <li class=\"nav-item\"><a class=\"nav-link\" href=\"#signup\">Contact</a></li>
+                    <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('app_contact') }}\">Contact</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"#service\">Service</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('app_login') }}\">Login/SignUp</a></li>
                 </ul>

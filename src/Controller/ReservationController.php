@@ -11,12 +11,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 class ReservationController extends AbstractController
 {
-    #[Route('/reservation/{id}', name: 'app_reservation')]
-    public function reservation(
-        int $id,
-        Request $request,
-        EntityManagerInterface $entityManager
-    ): Response {
+    #[Route('/reservation/{id<\d+>}', name: 'app_reservation')]
+    public function reservation(int $id,Request $request,EntityManagerInterface $entityManager): Response {
         $lieuCamping = $entityManager->getRepository(Lieucamping::class)->find($id);
 
         if (!$lieuCamping) {

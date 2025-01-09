@@ -55,10 +55,13 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
         yield from $this->unwrap()->yieldBlock('head', $context, $blocks);
         // line 16
         yield from $this->unwrap()->yieldBlock('script', $context, $blocks);
-        // line 21
+        // line 19
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 167
+        // line 176
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
+        // line 230
+        yield "</body>
+</html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -137,8 +140,6 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
 
         // line 17
         yield "<script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
-
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -149,7 +150,7 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
         yield from [];
     }
 
-    // line 21
+    // line 19
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -162,8 +163,8 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 22
-        yield "        
+        // line 20
+        yield "<body class=\"hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed\">        
 <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\">
     <ul class=\"navbar-nav\">
         <li class=\"nav-item\">
@@ -171,13 +172,13 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
         </li>
         <li class=\"nav-item d-none d-sm-inline-block\">
             <a href=\"";
-        // line 29
+        // line 27
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         yield "\" class=\"nav-link\">Home</a>
         </li>
         <li class=\"nav-item d-none d-sm-inline-block\">
             <a href=\"";
-        // line 32
+        // line 30
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_dashboard");
         yield "\" class=\"nav-link\">dashborad</a>
         </li>
@@ -195,7 +196,7 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
                     
                     <div class=\"info\">
                         <a href=\"";
-        // line 47
+        // line 45
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         yield "\" class=\"d-block\">Camping Center</a>
                     </div>
@@ -205,7 +206,7 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
                     <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
                       <li class=\"nav-item\">
                         <a href=\"";
-        // line 54
+        // line 52
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_index");
         yield "\" class=\"nav-link\">
                           <i class=\"nav-icon fas fa-mountain\"></i>
@@ -216,12 +217,12 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
                       </li>
                       <li class=\"nav-item\">
                         <a href=\"";
-        // line 62
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        // line 60
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_crud_index");
         yield "\" class=\"nav-link\">
-                          <i class=\"nav-icon far fa-user\"></i>
+                          <i class=\"nav-icon fas fa-calendar\"></i>
                           <p>
-                            Utilisateurs 
+                            Reservation 
                           </p>
                         </a>
                       </li>
@@ -287,52 +288,67 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
                                 
                                 <th>Nom</th>
                                 <th>Prénom</th>
+                                <th>Region</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             ";
-        // line 135
+        // line 134
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 135, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 134, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 136
+            // line 135
             yield "                                <tr>
                                     <td>";
-            // line 137
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 137), "html", null, true);
+            // line 136
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 136), "html", null, true);
             yield "</td>
                                     <td>";
-            // line 138
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 138), "html", null, true);
+            // line 137
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 137), "html", null, true);
             yield "</td>
                                     
                                     <td>";
-            // line 140
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 140), "html", null, true);
+            // line 139
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 139), "html", null, true);
             yield "</td>
                                     <td>";
-            // line 141
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 141), "html", null, true);
+            // line 140
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 140), "html", null, true);
+            yield "</td>
+                                   
+                                    <td>";
+            // line 142
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["user"], "idRegion", [], "any", false, false, false, 142), "NomRegion", [], "any", false, false, false, 142), "html", null, true);
             yield "</td>
                                     <td>
-                                        
-                                        <a href=\"";
-            // line 144
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 144)]), "html", null, true);
-            yield "\" class=\"btn btn-warning btn-sm\">Modifier</a>
-                                        <a href=\"";
+                                        <div class=\"d-flex align-items-center gap-2\">
+                                            <a href=\"";
             // line 145
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 145)]), "html", null, true);
-            yield " \" class=\"btn btn-danger btn-sm\">Supprimer</a>
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 145)]), "html", null, true);
+            yield "\" class=\"btn btn-warning btn-sm\">Modifier</a>
+                                    
+                                            <form method=\"post\" action=\"";
+            // line 147
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 147)]), "html", null, true);
+            yield "\" class=\"delete-form m-0 p-1\">
+                                                <input type=\"hidden\" name=\"_token\" value=\"";
+            // line 148
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 148))), "html", null, true);
+            yield "\">
+                                                <button type=\"button\" class=\"btn btn-danger btn-sm delete-btn\">Supprimer</button>
+                                            </form>
+                                        </div>
                                     </td>
+                                    
                                 </tr>
                             ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 149
+            // line 156
             yield "                                <tr>
                                     <td colspan=\"6\" class=\"text-center\">Aucun utilisateur trouvé</td>
                                 </tr>
@@ -341,9 +357,11 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['user'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 153
-        yield "                        </tbody>
+        // line 160
+        yield "
+                        </tbody>
                     </table>
+                    
                 </div>
                 <!-- /.card-body -->
             </div>
@@ -365,7 +383,7 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
         yield from [];
     }
 
-    // line 167
+    // line 176
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -378,63 +396,92 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 168
+        // line 177
         yield "<!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src=\"";
-        // line 170
+        // line 179
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery/jquery.min.js"), "html", null, true);
         yield "\"></script>
 <!-- Bootstrap -->
 <script src=\"";
-        // line 172
+        // line 181
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         yield "\"></script>
 <!-- overlayScrollbars -->
 <script src=\"";
-        // line 174
+        // line 183
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE App -->
 <script src=\"";
-        // line 176
+        // line 185
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/adminlte.js"), "html", null, true);
         yield "\"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src=\"";
-        // line 180
+        // line 189
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mousewheel/jquery.mousewheel.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 181
+        // line 190
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/raphael/raphael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 182
+        // line 191
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/jquery.mapael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 183
+        // line 192
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/maps/usa_states.min.js"), "html", null, true);
         yield "\"></script>
 <!-- ChartJS -->
 <script src=\"";
-        // line 185
+        // line 194
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/chart.js/Chart.min.js"), "html", null, true);
         yield "\"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src=\"";
-        // line 188
+        // line 197
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/demo.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=\"";
-        // line 190
+        // line 199
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/pages/dashboard2.js"), "html", null, true);
         yield "\"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const form = this.closest('.delete-form');
+
+                Swal.fire({
+                    title: 'Êtes-vous sûr(e) ?',
+                    text: \"Cette action est irréversible !\",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Oui, supprimer !',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit(); // Soumet le formulaire si l'utilisateur confirme
+                    }
+                });
+            });
+        });
+    });
+</script>
+<script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -458,7 +505,7 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
      */
     public function getDebugInfo(): array
     {
-        return array (  436 => 190,  431 => 188,  425 => 185,  420 => 183,  416 => 182,  412 => 181,  408 => 180,  401 => 176,  396 => 174,  391 => 172,  386 => 170,  382 => 168,  369 => 167,  345 => 153,  336 => 149,  327 => 145,  323 => 144,  317 => 141,  313 => 140,  308 => 138,  304 => 137,  301 => 136,  296 => 135,  220 => 62,  209 => 54,  199 => 47,  181 => 32,  175 => 29,  166 => 22,  153 => 21,  139 => 17,  126 => 16,  112 => 13,  108 => 12,  104 => 11,  100 => 10,  95 => 8,  90 => 6,  85 => 3,  72 => 2,  61 => 167,  59 => 21,  57 => 16,  55 => 2,  52 => 1,);
+        return array (  454 => 199,  449 => 197,  443 => 194,  438 => 192,  434 => 191,  430 => 190,  426 => 189,  419 => 185,  414 => 183,  409 => 181,  404 => 179,  400 => 177,  387 => 176,  361 => 160,  352 => 156,  339 => 148,  335 => 147,  330 => 145,  324 => 142,  319 => 140,  315 => 139,  310 => 137,  306 => 136,  303 => 135,  298 => 134,  221 => 60,  210 => 52,  200 => 45,  182 => 30,  176 => 27,  167 => 20,  154 => 19,  142 => 17,  129 => 16,  115 => 13,  111 => 12,  107 => 11,  103 => 10,  98 => 8,  93 => 6,  88 => 3,  75 => 2,  63 => 230,  61 => 176,  59 => 19,  57 => 16,  55 => 2,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -480,11 +527,9 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
 {% endblock head %}
 {% block script %}
 <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
-
-
 {% endblock script %}
 {% block body %}
-        
+<body class=\"hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed\">        
 <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\">
     <ul class=\"navbar-nav\">
         <li class=\"nav-item\">
@@ -524,10 +569,10 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
                         </a>
                       </li>
                       <li class=\"nav-item\">
-                        <a href=\"{{ path('app_user_index') }}\" class=\"nav-link\">
-                          <i class=\"nav-icon far fa-user\"></i>
+                        <a href=\"{{ path('app_reservation_crud_index') }}\" class=\"nav-link\">
+                          <i class=\"nav-icon fas fa-calendar\"></i>
                           <p>
-                            Utilisateurs 
+                            Reservation 
                           </p>
                         </a>
                       </li>
@@ -593,6 +638,7 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
                                 
                                 <th>Nom</th>
                                 <th>Prénom</th>
+                                <th>Region</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -604,19 +650,29 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
                                     
                                     <td>{{ user.nom }}</td>
                                     <td>{{ user.prenom }}</td>
+                                   
+                                    <td>{{ user.idRegion.NomRegion}}</td>
                                     <td>
-                                        
-                                        <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\" class=\"btn btn-warning btn-sm\">Modifier</a>
-                                        <a href=\"{{ path('app_user_delete',{'id': user.id}) }} \" class=\"btn btn-danger btn-sm\">Supprimer</a>
+                                        <div class=\"d-flex align-items-center gap-2\">
+                                            <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\" class=\"btn btn-warning btn-sm\">Modifier</a>
+                                    
+                                            <form method=\"post\" action=\"{{ path('app_user_delete', {'id': user.id}) }}\" class=\"delete-form m-0 p-1\">
+                                                <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
+                                                <button type=\"button\" class=\"btn btn-danger btn-sm delete-btn\">Supprimer</button>
+                                            </form>
+                                        </div>
                                     </td>
+                                    
                                 </tr>
                             {% else %}
                                 <tr>
                                     <td colspan=\"6\" class=\"text-center\">Aucun utilisateur trouvé</td>
                                 </tr>
                             {% endfor %}
+
                         </tbody>
                     </table>
+                    
                 </div>
                 <!-- /.card-body -->
             </div>
@@ -653,6 +709,37 @@ class __TwigTemplate_052916306da88f14e5109a19333ec4c9512eb5ecad994e0ba28d3fea727
 <script src=\"{{ asset('admintmp/dist/js/demo.js')}}\"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=\"{{ asset('admintmp/dist/js/pages/dashboard2.js')}}\"></script>
-{% endblock scripts %}", "user/index.html.twig", "C:\\xampp\\htdocs\\projetC\\templates\\user\\index.html.twig");
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const form = this.closest('.delete-form');
+
+                Swal.fire({
+                    title: 'Êtes-vous sûr(e) ?',
+                    text: \"Cette action est irréversible !\",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Oui, supprimer !',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit(); // Soumet le formulaire si l'utilisateur confirme
+                    }
+                });
+            });
+        });
+    });
+</script>
+<script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
+
+
+{% endblock scripts %}
+</body>
+</html>", "user/index.html.twig", "C:\\xampp\\htdocs\\projetC\\templates\\user\\index.html.twig");
     }
 }

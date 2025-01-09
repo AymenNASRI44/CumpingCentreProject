@@ -34,8 +34,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
-    #[ORM\ManyToOne(inversedBy: 'users')]
-    private ?Region $nom_region = null;
+   
 
     // Relation OneToMany avec Avis
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Avis::class)]
@@ -46,6 +45,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Reservation::class)]
     private Collection $reservations;
+
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?Region $id_region = null;
 
     public function __construct()
     {
@@ -105,7 +107,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function eraseCredentials(): void
     {
-        // Si tu stockes des données sensibles, vide-les ici
+     
     }
 
     public function getNom(): ?string
@@ -132,18 +134,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getNomRegion(): ?Region
-    {
-        return $this->nom_region;
-    }
-
-    public function setNomRegion(?Region $nom_region): static
-    {
-        $this->nom_region = $nom_region;
-
-        return $this;
-    }
-
+   
     /**
      * Relation OneToMany avec Avis
      * @return Collection<int, Avis>
@@ -218,6 +209,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $reservation->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIdRegion(): ?Region
+    {
+        return $this->id_region;
+    }
+
+    public function setIdRegion(?Region $id_region): static
+    {
+        $this->id_region = $id_region;
 
         return $this;
     }

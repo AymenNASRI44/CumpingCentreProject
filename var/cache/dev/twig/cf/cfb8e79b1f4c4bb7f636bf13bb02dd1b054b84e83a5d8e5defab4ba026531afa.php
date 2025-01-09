@@ -59,13 +59,13 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         yield from $this->unwrap()->yieldBlock('head', $context, $blocks);
         // line 21
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 206
+        // line 156
         yield "  
 <!-- ./wrapper -->
 ";
-        // line 208
+        // line 158
         yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
-        // line 309
+        // line 261
         yield "</body>
 </html>
 ";
@@ -148,103 +148,53 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         // line 22
         yield "<body class=\"hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed\">
 <div class=\"wrapper\">
-  <!-- Navbar -->
-  <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\">
-    <!-- Left navbar links -->
-    <ul class=\"navbar-nav\">
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" data-widget=\"pushmenu\" href=\"#\" role=\"button\"><i class=\"fas fa-bars\"></i></a>
-      </li>
-      <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"";
-        // line 32
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        yield "\" class=\"nav-link\">Home</a>
-      </li>
-      <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"";
-        // line 35
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_dashboard");
-        yield "\" class=\"nav-link\">dashborad</a>
-      </li>
-    </ul>
-
-    <!-- SEARCH FORM -->
-    <form class=\"form-inline ml-3\">
-      <div class=\"input-group input-group-sm\">
-        <input class=\"form-control form-control-navbar\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-        <div class=\"input-group-append\">
-          <button class=\"btn btn-navbar\" type=\"submit\">
-            <i class=\"fas fa-search\"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    
-  </nav>
-  <!-- /.navbar -->
-  
-  <!-- Main Sidebar Container -->
   <aside class=\"main-sidebar sidebar-dark-primary elevation-4\">
-    <!-- Brand Logo -->
-    <a href=\"index3.html\" class=\"brand-link\">
-      <img src=\"dist/img/AdminLTELogo.png\" alt=\"AdminLTE Logo\" class=\"brand-image img-circle elevation-3\" style=\"opacity: .8\">
-      <span class=\"brand-text font-weight-light\">AdminLTE 3</span>
-    </a>
-
-    <!-- Sidebar -->
-    
-
-      <!-- SidebarSearch Form -->
-      <div class=\"form-inline\">
-        <div class=\"input-group\" data-widget=\"sidebar-search\">
-          <input class=\"form-control form-control-sidebar\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-          <div class=\"input-group-append\">
-            <button class=\"btn btn-sidebar\">
-              <i class=\"fas fa-search fa-fw\"></i>
-            </button>
-          </div>
+    <div class=\"sidebar\">
+        <div class=\"user-panel mt-3 pb-3 mb-3 d-flex\">
+            <div class=\"info\">
+                <a href=\"";
+        // line 28
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\" class=\"d-block\">Camping Center</a>
+            </div>
         </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class=\"mt-2\">
-        <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
-          <li class=\"nav-item\">
-            <a href=\"";
-        // line 82
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_index");
+        <nav class=\"mt-2\">
+            <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
+                <li class=\"nav-item\">
+                    <a href=\"";
+        // line 34
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_crud_index");
         yield "\" class=\"nav-link\">
-              <i class=\"nav-icon fas fa-mountain\"></i>
-              <p>
-                Centre de camping 
-              </p>
-            </a>
-          </li>
-          <li class=\"nav-item\">
-            <a href=\"";
-        // line 90
+                      <i class=\"nav-icon fas fa-calendar\"></i>
+                      <p>
+                        Reservation 
+                      </p>
+                    </a>
+                  </li>
+                <li class=\"nav-item\">
+                    <a href=\"";
+        // line 42
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\" class=\"nav-link\">
-              <i class=\"nav-icon far fa-user\"></i>
-              <p>
-                Utilisateurs 
-              </p>
-            </a>
-          </li>
-          
-        
-         
-  
-
-          
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
+                        <i class=\"nav-icon far fa-user\"></i>
+                        <p>Utilisateurs</p>
+                    </a>
+                </li>
+                <li class=\"nav-item\">
+                  <a href=\"";
+        // line 48
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lieucamping_index");
+        yield "\" class=\"nav-link\">
+                    <i class=\"nav-icon fas fa-mountain\"></i>
+                    <p>
+                      Centre de camping 
+                    </p>
+                  </a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <!-- /.sidebar -->
-  </aside>
+</aside>
   
   <section class=\"content\">
     <div class=\"container-fluid\">
@@ -284,8 +234,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
                 <div class=\"info-box-content\">
                     <span class=\"info-box-text\">Réservations</span>
                     <span class=\"info-box-number\">";
-        // line 147
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["reservationsCount"]) || array_key_exists("reservationsCount", $context) ? $context["reservationsCount"] : (function () { throw new RuntimeError('Variable "reservationsCount" does not exist.', 147, $this->source); })()), "html", null, true);
+        // line 97
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["reservationsCount"]) || array_key_exists("reservationsCount", $context) ? $context["reservationsCount"] : (function () { throw new RuntimeError('Variable "reservationsCount" does not exist.', 97, $this->source); })()), "html", null, true);
         yield "</span>
                 </div>
             </div>
@@ -298,8 +248,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
                 <div class=\"info-box-content\">
                     <span class=\"info-box-text\">Lieux de Camping</span>
                     <span class=\"info-box-number\">";
-        // line 158
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["lieuxCampingCount"]) || array_key_exists("lieuxCampingCount", $context) ? $context["lieuxCampingCount"] : (function () { throw new RuntimeError('Variable "lieuxCampingCount" does not exist.', 158, $this->source); })()), "html", null, true);
+        // line 108
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["lieuxCampingCount"]) || array_key_exists("lieuxCampingCount", $context) ? $context["lieuxCampingCount"] : (function () { throw new RuntimeError('Variable "lieuxCampingCount" does not exist.', 108, $this->source); })()), "html", null, true);
         yield "</span>
                 </div>
             </div>
@@ -312,8 +262,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
                 <div class=\"info-box-content\">
                     <span class=\"info-box-text\">Utilisateurs</span>
                     <span class=\"info-box-number\">";
-        // line 169
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["utilisateursCount"]) || array_key_exists("utilisateursCount", $context) ? $context["utilisateursCount"] : (function () { throw new RuntimeError('Variable "utilisateursCount" does not exist.', 169, $this->source); })()), "html", null, true);
+        // line 119
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["utilisateursCount"]) || array_key_exists("utilisateursCount", $context) ? $context["utilisateursCount"] : (function () { throw new RuntimeError('Variable "utilisateursCount" does not exist.', 119, $this->source); })()), "html", null, true);
         yield "</span>
                 </div>
             </div>
@@ -360,7 +310,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         yield from [];
     }
 
-    // line 208
+    // line 158
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -373,61 +323,61 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 209
+        // line 159
         yield "<!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src=\"";
-        // line 211
+        // line 161
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery/jquery.min.js"), "html", null, true);
         yield "\"></script>
 <!-- Bootstrap -->
 <script src=\"";
-        // line 213
+        // line 163
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         yield "\"></script>
 <!-- overlayScrollbars -->
 <script src=\"";
-        // line 215
+        // line 165
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE App -->
 <script src=\"";
-        // line 217
+        // line 167
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/adminlte.js"), "html", null, true);
         yield "\"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src=\"";
-        // line 221
+        // line 171
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mousewheel/jquery.mousewheel.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 222
+        // line 172
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/raphael/raphael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 223
+        // line 173
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/jquery.mapael.min.js"), "html", null, true);
         yield "\"></script>
 <script src=\"";
-        // line 224
+        // line 174
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/jquery-mapael/maps/usa_states.min.js"), "html", null, true);
         yield "\"></script>
 <!-- ChartJS -->
 <script src=\"";
-        // line 226
+        // line 176
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/plugins/chart.js/Chart.min.js"), "html", null, true);
         yield "\"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src=\"";
-        // line 229
+        // line 179
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/demo.js"), "html", null, true);
         yield "\"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=\"";
-        // line 231
+        // line 181
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admintmp/dist/js/pages/dashboard2.js"), "html", null, true);
         yield "\"></script>
 <script>
@@ -435,8 +385,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
   // Données pour le graphique des utilisateurs par région
   const usersByRegionData = {
       labels: ";
-        // line 236
-        yield (isset($context["regions"]) || array_key_exists("regions", $context) ? $context["regions"] : (function () { throw new RuntimeError('Variable "regions" does not exist.', 236, $this->source); })());
+        // line 186
+        yield (isset($context["regions"]) || array_key_exists("regions", $context) ? $context["regions"] : (function () { throw new RuntimeError('Variable "regions" does not exist.', 186, $this->source); })());
         yield ", 
       datasets: [{
           label: 'Utilisateurs',
@@ -444,8 +394,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
           borderColor: '#ffffff',
           borderWidth: 1,
           data: ";
-        // line 242
-        yield (isset($context["userCounts"]) || array_key_exists("userCounts", $context) ? $context["userCounts"] : (function () { throw new RuntimeError('Variable "userCounts" does not exist.', 242, $this->source); })());
+        // line 192
+        yield (isset($context["userCounts"]) || array_key_exists("userCounts", $context) ? $context["userCounts"] : (function () { throw new RuntimeError('Variable "userCounts" does not exist.', 192, $this->source); })());
         yield " // Les nombres d'utilisateurs par région
       }]
   };
@@ -477,8 +427,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
  
   const resparlieuData = {
       labels: ";
-        // line 272
-        yield (isset($context["lieuNames"]) || array_key_exists("lieuNames", $context) ? $context["lieuNames"] : (function () { throw new RuntimeError('Variable "lieuNames" does not exist.', 272, $this->source); })());
+        // line 222
+        yield (isset($context["lieuNames"]) || array_key_exists("lieuNames", $context) ? $context["lieuNames"] : (function () { throw new RuntimeError('Variable "lieuNames" does not exist.', 222, $this->source); })());
         yield ", 
       datasets: [{
           label: 'Utilisateurs',
@@ -486,8 +436,8 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
           borderColor: '#ffffff',
           borderWidth: 1,
           data: ";
-        // line 278
-        yield (isset($context["reservationCounts"]) || array_key_exists("reservationCounts", $context) ? $context["reservationCounts"] : (function () { throw new RuntimeError('Variable "reservationCounts" does not exist.', 278, $this->source); })());
+        // line 228
+        yield (isset($context["reservationCounts"]) || array_key_exists("reservationCounts", $context) ? $context["reservationCounts"] : (function () { throw new RuntimeError('Variable "reservationCounts" does not exist.', 228, $this->source); })());
         yield " 
       }]
   };
@@ -510,12 +460,14 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
 
   // Initialisation du graphique
   new Chart(document.getElementById('resparlieuChart'), {
-      type: 'pie', // Vous pouvez changer ce type en 'pie' ou 'doughnut' pour d'autres graphiques
+      type: 'bar', // Vous pouvez changer ce type en 'pie' ou 'doughnut' pour d'autres graphiques
       data: resparlieuData,
       options: resparlieuOptions
   });
   
 </script>
+<script>
+  
 
 
 ";
@@ -541,7 +493,7 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
      */
     public function getDebugInfo(): array
     {
-        return array (  490 => 278,  481 => 272,  448 => 242,  439 => 236,  431 => 231,  426 => 229,  420 => 226,  415 => 224,  411 => 223,  407 => 222,  403 => 221,  396 => 217,  391 => 215,  386 => 213,  381 => 211,  377 => 209,  364 => 208,  316 => 169,  302 => 158,  288 => 147,  228 => 90,  217 => 82,  167 => 35,  161 => 32,  149 => 22,  136 => 21,  122 => 18,  118 => 17,  114 => 16,  110 => 15,  105 => 13,  100 => 11,  95 => 8,  82 => 7,  69 => 309,  67 => 208,  63 => 206,  61 => 21,  59 => 7,  51 => 1,);
+        return array (  440 => 228,  431 => 222,  398 => 192,  389 => 186,  381 => 181,  376 => 179,  370 => 176,  365 => 174,  361 => 173,  357 => 172,  353 => 171,  346 => 167,  341 => 165,  336 => 163,  331 => 161,  327 => 159,  314 => 158,  266 => 119,  252 => 108,  238 => 97,  186 => 48,  177 => 42,  166 => 34,  157 => 28,  149 => 22,  136 => 21,  122 => 18,  118 => 17,  114 => 16,  110 => 15,  105 => 13,  100 => 11,  95 => 8,  82 => 7,  69 => 261,  67 => 158,  63 => 156,  61 => 21,  59 => 7,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -569,91 +521,41 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
 {% block body %}
 <body class=\"hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed\">
 <div class=\"wrapper\">
-  <!-- Navbar -->
-  <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\">
-    <!-- Left navbar links -->
-    <ul class=\"navbar-nav\">
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" data-widget=\"pushmenu\" href=\"#\" role=\"button\"><i class=\"fas fa-bars\"></i></a>
-      </li>
-      <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"{{ path('app_home') }}\" class=\"nav-link\">Home</a>
-      </li>
-      <li class=\"nav-item d-none d-sm-inline-block\">
-        <a href=\"{{path('app_admin_dashboard')}}\" class=\"nav-link\">dashborad</a>
-      </li>
-    </ul>
-
-    <!-- SEARCH FORM -->
-    <form class=\"form-inline ml-3\">
-      <div class=\"input-group input-group-sm\">
-        <input class=\"form-control form-control-navbar\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-        <div class=\"input-group-append\">
-          <button class=\"btn btn-navbar\" type=\"submit\">
-            <i class=\"fas fa-search\"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    
-  </nav>
-  <!-- /.navbar -->
-  
-  <!-- Main Sidebar Container -->
   <aside class=\"main-sidebar sidebar-dark-primary elevation-4\">
-    <!-- Brand Logo -->
-    <a href=\"index3.html\" class=\"brand-link\">
-      <img src=\"dist/img/AdminLTELogo.png\" alt=\"AdminLTE Logo\" class=\"brand-image img-circle elevation-3\" style=\"opacity: .8\">
-      <span class=\"brand-text font-weight-light\">AdminLTE 3</span>
-    </a>
-
-    <!-- Sidebar -->
-    
-
-      <!-- SidebarSearch Form -->
-      <div class=\"form-inline\">
-        <div class=\"input-group\" data-widget=\"sidebar-search\">
-          <input class=\"form-control form-control-sidebar\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-          <div class=\"input-group-append\">
-            <button class=\"btn btn-sidebar\">
-              <i class=\"fas fa-search fa-fw\"></i>
-            </button>
-          </div>
+    <div class=\"sidebar\">
+        <div class=\"user-panel mt-3 pb-3 mb-3 d-flex\">
+            <div class=\"info\">
+                <a href=\"{{ path('app_home') }}\" class=\"d-block\">Camping Center</a>
+            </div>
         </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class=\"mt-2\">
-        <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
-          <li class=\"nav-item\">
-            <a href=\"{{path('app_lieucamping_index')}}\" class=\"nav-link\">
-              <i class=\"nav-icon fas fa-mountain\"></i>
-              <p>
-                Centre de camping 
-              </p>
-            </a>
-          </li>
-          <li class=\"nav-item\">
-            <a href=\"{{ path('app_user_index') }}\" class=\"nav-link\">
-              <i class=\"nav-icon far fa-user\"></i>
-              <p>
-                Utilisateurs 
-              </p>
-            </a>
-          </li>
-          
-        
-         
-  
-
-          
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
+        <nav class=\"mt-2\">
+            <ul class=\"nav nav-pills nav-sidebar flex-column\" data-widget=\"treeview\" role=\"menu\" data-accordion=\"false\">
+                <li class=\"nav-item\">
+                    <a href=\"{{ path('app_reservation_crud_index') }}\" class=\"nav-link\">
+                      <i class=\"nav-icon fas fa-calendar\"></i>
+                      <p>
+                        Reservation 
+                      </p>
+                    </a>
+                  </li>
+                <li class=\"nav-item\">
+                    <a href=\"{{ path('app_user_index') }}\" class=\"nav-link\">
+                        <i class=\"nav-icon far fa-user\"></i>
+                        <p>Utilisateurs</p>
+                    </a>
+                </li>
+                <li class=\"nav-item\">
+                  <a href=\"{{path('app_lieucamping_index')}}\" class=\"nav-link\">
+                    <i class=\"nav-icon fas fa-mountain\"></i>
+                    <p>
+                      Centre de camping 
+                    </p>
+                  </a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <!-- /.sidebar -->
-  </aside>
+</aside>
   
   <section class=\"content\">
     <div class=\"container-fluid\">
@@ -845,12 +747,14 @@ class __TwigTemplate_e11f2a3cbc4247b6de69f78e6c26aa2617635b160cdcc092f1821124dbc
 
   // Initialisation du graphique
   new Chart(document.getElementById('resparlieuChart'), {
-      type: 'pie', // Vous pouvez changer ce type en 'pie' ou 'doughnut' pour d'autres graphiques
+      type: 'bar', // Vous pouvez changer ce type en 'pie' ou 'doughnut' pour d'autres graphiques
       data: resparlieuData,
       options: resparlieuOptions
   });
   
 </script>
+<script>
+  
 
 
 {% endblock scripts %}
