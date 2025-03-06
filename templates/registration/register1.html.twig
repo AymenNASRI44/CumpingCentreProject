@@ -13,29 +13,19 @@
 
     {{ form_start(registrationForm) }}
     <div class="input-field">
-        {{ form_row(registrationForm.email, {
-            attr: { placeholder: 'Entrez votre email', class: 'form-control' }
-        }) }}
+        {{ form_row(registrationForm.email) }}
     </div>
     <div class="input-field">
-        {{ form_row(registrationForm.nom, {
-            attr: { placeholder: 'Entrez votre nom', class: 'form-control' }
-        }) }}  
+        {{ form_row(registrationForm.nom) }}  
     </div>
     <div class="input-field">
-        {{ form_row(registrationForm.prenom, {
-            attr: { placeholder: 'Entrez votre prénom', class: 'form-control' }
-        }) }}
+        {{ form_row(registrationForm.prenom) }}
     </div>
     <div class="input-field">
-        {{ form_row(registrationForm.id_region, {
-            attr: { class: 'form-control select-field custom-select' }
-        }) }}
+        {{ form_row(registrationForm.id_region) }}
     </div>
     <div class="input-field">
-        {{ form_row(registrationForm.plainPassword, {
-            attr: { placeholder: 'Entrez votre mot de passe', class: 'form-control' }
-        }) }}
+        {{ form_row(registrationForm.plainPassword) }}
     </div>
     <div class="forget">
         {{ form_widget(registrationForm.agreeTerms) }}

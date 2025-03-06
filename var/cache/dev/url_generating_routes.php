@@ -36,6 +36,8 @@ return [
     'app_reservation_crud_delete' => [['id'], ['_controller' => 'App\\Controller\\ReservationCrudController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/reservation/crud']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
+    'app_test' => [[], ['_controller' => 'App\\Controller\\TestController::index'], [], [['text', '/test']], [], [], []],
+    'app_test_controller1' => [[], ['_controller' => 'App\\Controller\\TestController1Controller::index'], [], [['text', '/test/controller1']], [], [], []],
     'app_user_index' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user/']], [], [], []],
     'app_user_new' => [[], ['_controller' => 'App\\Controller\\UserController::new'], [], [['text', '/user/new']], [], [], []],
     'app_user_show' => [['id'], ['_controller' => 'App\\Controller\\UserController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], [], []],

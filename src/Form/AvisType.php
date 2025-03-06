@@ -17,18 +17,7 @@ class AvisType extends AbstractType
         $builder
             
             ->add('commentaire')
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'nom', 
-                'label' => 'Utilisateur',
-                'disabled' => true, 
-            ])
-            ->add('id_lieu', EntityType::class, [
-                'class' => Lieucamping::class,
-                'choice_label' => 'nom',
-                'label' => 'Lieu de camping',
-                'disabled' => true, 
-            ])
+            
         ;
     }
 
