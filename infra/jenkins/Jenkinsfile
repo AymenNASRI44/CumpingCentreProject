@@ -1,68 +1,42 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_IMAGE_SYMFONY = 'mon-image-symfony'
-        DOCKER_IMAGE_NGINX = 'mon-image-nginx'
-        DOCKER_TAG = 'latest'
-    }
-
     stages {
-        stage('Cloner le dépôt') {
-            steps {
-                // Cloner le dépôt Git
-                git 'https://github.com/AymenNASRI44/CumpingCentreProject.git' // Remplace par ton dépôt Git
-            }
-        }
 
-        stage('Construire l\'image Symfony') {
+        stage('Run Conteneurs') {
             steps {
-                // Construire l'image Docker de l'application Symfony
                 script {
-                    docker.build("${DOCKER_IMAGE_SYMFONY}:${DOCKER_TAG}", '-f Dockerfile .')
-                }
-            }
-        }
-
-        stage('Construire l\'image Nginx') {
-            steps {
-                // Construire l'image Docker de Nginx avec la configuration
-                script {
-                    docker.build("${DOCKER_IMAGE_NGINX}:${DOCKER_TAG}", '-f Dockerfile.nginx .')
+                    sh 'docker-compose up -d'
                 }
             }
         }
 
         stage('Tests') {
             steps {
-                // Lancer les tests avec Symfony (si tu en as)
                 script {
-                    docker.image("${DOCKER_IMAGE_SYMFONY}:${DOCKER_TAG}").inside {
-                        sh 'php bin/console doctrine:migrations:migrate --no-interaction'
-                        sh 'php bin/phpunit'
-                    }
+                    // On suppose que le service Symfony s'appelle "symfony" dans docker-compose.yml
+                    sh 'docker exec symfony php bin/console doctrine:migrations:migrate --no-interaction'
+                    sh 'docker exec symfony php bin/phpunit'
                 }
             }
         }
 
         stage('Déploiement') {
             steps {
-                // Lancer les conteneurs Docker pour Symfony et Nginx
                 script {
-                    // Utiliser docker-compose ou docker run pour lancer les conteneurs
-                    sh 'docker-compose down'  // Arrêter les anciens conteneurs
-                    sh 'docker-compose up -d'  // Démarrer les nouveaux conteneurs
+                    sh 'docker-compose down'
+                    sh 'docker-compose up -d --build'
                 }
             }
         }
     }
 
     post {
-        success {
-            echo "Déploiement réussi avec Nginx !"
-        }
         failure {
-            echo "Le déploiement a échoué."
+            echo "Le déploiement a échoué. Consultez les logs pour plus de détails."
+        }
+        success {
+            echo "Déploiement réussi !"
         }
     }
 }
