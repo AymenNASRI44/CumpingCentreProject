@@ -2,51 +2,78 @@ pipeline {
     agent any
 
     environment {
-        COMPOSE_CMD = 'docker-compose' // Change à 'docker-compose' si nécessaire
+        DOCKER_COMPOSE = 'docker-compose'
+        PROJECT_NAME = 'projetC'
     }
 
     stages {
-
-        
-
-        stage('Run Conteneurs') {
+        // Étape 1: Build des images Docker
+        stage('Build Docker') {
             steps {
                 script {
-                    echo "Lancement des conteneurs en mode détaché..."
-                    sh "${COMPOSE_CMD} up -d"
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} build"
                 }
             }
         }
 
-        stage('Tests') {
+        // Étape 2: Lancement des containers et installation des dépendances
+        stage('Start Containers & Install Dependencies') {
             steps {
                 script {
-                    echo "Exécution des tests Symfony..."
-                    // Utilise 'app' comme nom du service pour exécuter les commandes dans Symfony
-                    sh "${COMPOSE_CMD} ps"
-                    sh "${COMPOSE_CMD} exec symfony_app php bin/console doctrine:migrations:migrate --no-interaction "
-                    sh "${COMPOSE_CMD} exec symfony_app php bin/phpunit"
+                    // Démarrer les services (MySQL, Nginx, etc.)
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} up -d database"
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} up -d app"
+
+                    // Installer les dépendances Composer
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} exec app composer install --no-interaction"
+
+                    // Exécuter les migrations (si nécessaire)
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} exec app php bin/console doctrine:migrations:migrate --no-interaction"
                 }
             }
         }
 
-        stage('Déploiement') {
+        // Étape 3: Exécution des tests (PHPUnit)
+        stage('Run Tests') {
             steps {
                 script {
-                    echo "Arrêt et reconstruction des conteneurs..."
-                    sh "${COMPOSE_CMD} down"
-                    sh "${COMPOSE_CMD} up -d --build"
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} exec app php bin/phpunit"
+                }
+            }
+        }
+
+        // Étape 4: Build des assets (Webpack Encore si utilisé)
+        stage('Build Assets') {
+            when {
+                expression { fileExists('webpack.config.js') }
+            }
+            steps {
+                script {
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} exec app yarn install"
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} exec app yarn build"
+                }
+            }
+        }
+
+        // Étape 5: Déploiement (exemple : redémarrer les services)
+        stage('Deploy') {
+            steps {
+                script {
+                    // Redémarrer Nginx pour appliquer les changements
+                    sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} restart web"
                 }
             }
         }
     }
 
+    // Nettoyage après exécution
     post {
-        failure {
-            echo "❌ Le déploiement a échoué. Consultez les logs pour plus de détails."
-        }
-        success {
-            echo "✅ Déploiement réussi !"
+        always {
+            script {
+                // Arrêter les containers (optionnel, selon vos besoins)
+                sh "${DOCKER_COMPOSE} -p ${PROJECT_NAME} down || true"
+            }
+            cleanWs() // Nettoyer le workspace Jenkins
         }
     }
 }
