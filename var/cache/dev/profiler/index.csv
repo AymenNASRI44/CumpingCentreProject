@@ -75,3 +75,6 @@ aaaa00,172.18.0.1,GET,http://localhost:8000/favicon.ico,1743529199,6dbf03,404
 63b5d5,172.18.0.1,GET,http://localhost:8000/favicon.ico,1744275035,6743d3,404
 0aaf0c,172.18.0.1,GET,http://localhost:8000/,1744275036,,200
 6743d3,172.18.0.1,GET,http://localhost:8000/favicon.ico,1744275035,,404
+63a743,172.18.0.1,GET,http://localhost:8000/css/public/assets/img/bg-masthead.jpg,1744275045,4b594a,404
+4b594a,172.18.0.1,GET,http://localhost:8000/css/public/assets/img/bg-masthead.jpg,1744275046,,404
+2de83e,172.18.0.1,GET,http://localhost:8000/lieu,1744275747,,200

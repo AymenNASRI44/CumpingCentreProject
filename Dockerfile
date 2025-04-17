@@ -4,7 +4,7 @@ FROM php:8.1-fpm
 # Définir le répertoire de travail
 WORKDIR /var/www/html
 
-# Installer les dépendances système nécessaires
+# Installer les dépendanc0es système nécessaires
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
