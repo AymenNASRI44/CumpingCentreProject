@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Vérifie que le fichier docker-compose.yml est bien présent
-                    sh 'ls -l docker compose.yml'
+                    sh 'ls -l docker-compose.yml'
                     
                     // Vérifie la validité du fichier docker-compose.yml
                     sh "${COMPOSE_CMD} config"
