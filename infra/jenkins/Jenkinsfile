@@ -34,8 +34,8 @@ pipeline {
                     echo "Exécution des tests Symfony..."
                     // Utilise 'app' comme nom du service pour exécuter les commandes dans Symfony
                     sh "${COMPOSE_CMD} ps"
-                    sh "${COMPOSE_CMD} exec -T app php bin/console doctrine:migrations:migrate --no-interaction"
-                    sh "${COMPOSE_CMD} exec -T app php bin/phpunit"
+                    sh "${COMPOSE_CMD} exec symfony_app php bin/console doctrine:migrations:migrate --no-interaction "
+                    sh "${COMPOSE_CMD} exec symfony_app php bin/phpunit"
                 }
             }
         }
