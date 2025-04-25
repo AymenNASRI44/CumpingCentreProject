@@ -1,5 +1,0 @@
-workflow-aggregator
-docker-workflow
-git
-ssh-agent
-blueocean

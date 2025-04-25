@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'symfony'
+    static_configs:
+      - targets: ['symfony_nginx:80']  # Cible le service Nginx exposant ton application Symfony
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9091']  # Cible Prometheus lui-même (auto-scraping)

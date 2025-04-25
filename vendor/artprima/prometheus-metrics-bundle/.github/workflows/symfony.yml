@@ -1,0 +1,67 @@
+name: Symfony
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  run:
+    runs-on: ${{ matrix.operating-system }}
+    services:
+      redis:
+        image: redis
+        ports:
+        - 6379:6379
+        options: --entrypoint redis-server
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+        symfony-versions: ['5.4', '6.0', '6.1']
+        php-versions: ['7.4', '8.0', '8.1']
+        exclude:
+          - operating-system: ubuntu-latest
+            symfony-versions: '6.0'
+            php-versions: '7.4'
+          - operating-system: ubuntu-latest
+            symfony-versions: '6.1'
+            php-versions: '7.4'
+          - operating-system: ubuntu-latest
+            symfony-versions: '6.1'
+            php-versions: '8.0'
+    name: PHP ${{ matrix.php-versions }} / Symfony ${{ matrix.symfony-versions }} Test on ${{ matrix.operating-system }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+        extensions: mbstring, intl, redis
+        ini-values: post_max_size=256M
+        coverage: xdebug        
+        tools: php-cs-fixer, phpunit
+    - name: Download Symfony Binary
+      run:  wget https://get.symfony.com/cli/installer -O - | bash
+    - name: Install Symfony
+      run: |
+        git config --global user.email "${{ github.actor }}"
+        git config --global user.name ""github-action-${{ github.actor }}@users.noreply.github.com""
+        /home/runner/.symfony5/bin/symfony new symfony --version=${{ matrix.symfony-versions }}
+    - name: Configure Symfony to run integration tests
+      run: |
+        php .integration/patch.php
+        cd symfony
+        cat composer.json
+        composer require symfony/phpunit-bridge:5.2.* -n --no-progress
+        composer require symfony/browser-kit -n --no-progress
+        composer require annotations -n --no-progress
+        composer require artprima/prometheus-metrics-bundle:* -n --no-progress --no-scripts
+        cp -rf ../.integration/symfony/* ./
+        composer upgrade -n --no-progress
+    - name: Run Integration tests
+      run: |
+        cd symfony
+        php bin/phpunit

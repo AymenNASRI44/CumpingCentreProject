@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b2f68de034f533e65500adb2e6c22cacf9b14549',
+        'reference' => 'cbf0933ced5a0924aeff492dbc0b680dfba6160d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,9 +13,18 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b2f68de034f533e65500adb2e6c22cacf9b14549',
+            'reference' => 'cbf0933ced5a0924aeff492dbc0b680dfba6160d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'artprima/prometheus-metrics-bundle' => array(
+            'pretty_version' => '1.15.0',
+            'version' => '1.15.0.0',
+            'reference' => 'ff351e8f7e90508924dbdc9405f3bd51da1aab8d',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../artprima/prometheus-metrics-bundle',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -181,6 +190,12 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'endclothing/prometheus_client_php' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
         'friendsofphp/proxy-manager-lts' => array(
             'pretty_version' => 'v1.0.18',
             'version' => '1.0.18.0',
@@ -189,6 +204,12 @@
             'install_path' => __DIR__ . '/../friendsofphp/proxy-manager-lts',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'jimdo/prometheus_client_php' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'jms/metadata' => array(
             'pretty_version' => '2.8.0',
@@ -207,6 +228,12 @@
             'install_path' => __DIR__ . '/../laminas/laminas-code',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'lkaemmerling/prometheus_client_php' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'monolog/monolog' => array(
             'pretty_version' => '2.10.0',
@@ -360,6 +387,15 @@
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'promphp/prometheus_client_php' => array(
+            'pretty_version' => 'v2.14.1',
+            'version' => '2.14.1.0',
+            'reference' => 'a283aea8269287dc35313a0055480d950c59ac1f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../promphp/prometheus_client_php',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'psr/cache' => array(
             'pretty_version' => '3.0.0',

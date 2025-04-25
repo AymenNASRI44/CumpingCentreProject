@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile  # Chemin vers le Dockerfile à la racine
+      dockerfile: Dockerfile
     container_name: symfony_app
     restart: always
     working_dir: /var/www/html
@@ -70,6 +70,30 @@ services:
     depends_on:
       - app
 
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: always
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9091:9090"
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring
+
 volumes:
   db_data:
   jenkins_home:
+
+networks:
+  monitoring:
+    driver: bridge

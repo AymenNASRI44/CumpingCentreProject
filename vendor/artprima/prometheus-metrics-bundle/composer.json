@@ -1,0 +1,51 @@
+{
+  "name": "artprima/prometheus-metrics-bundle",
+  "description": "Symfony 5 / 6 Prometheus Metrics Bundle",
+  "keywords": [ "symfony", "symfony-bundle", "prometheus", "metrics" ],
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Denis Voytyuk",
+      "email": "ask@artprima.cz"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.0",
+    "ext-json": "*",
+    "promphp/prometheus_client_php": "^2.2",
+    "symfony/http-kernel": "^5.4|^6.0",
+    "symfony/dependency-injection": "^5.4|^6.0",
+    "symfony/config": "^5.4|^6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0|^9.0",
+    "symfony/yaml": "^5.0",
+    "symfony/browser-kit": "^5.0|^6.0",
+    "symfony/framework-bundle": "^5.0|^6.0",
+    "friendsofphp/php-cs-fixer": "^2.17",
+    "escapestudios/symfony2-coding-standard": "^3.11",
+    "squizlabs/php_codesniffer": "^3.5"
+  },
+  "scripts": {
+     "php-cs-fixer": "php-cs-fixer --config=./.php_cs.dist",
+     "php-cs-fixer-check": "php-cs-fixer fix --config=.php_cs.dist -v --diff --allow-risky=yes --ansi --dry-run",
+     "php-cs-fixer-fix": "php-cs-fixer fix --config=.php_cs.dist -v --diff --allow-risky=yes --ansi",
+     "phpcs-check": "phpcs"
+  },
+  "suggest": {
+    "ext-apcu": "Required if using APCu as prometheus metrics backend",
+    "ext-redis": "Required if using Redis as prometheus metrics backend",
+    "symfony/stopwatch": "Required if you want to measure request duration"
+  },
+  "autoload": {
+    "psr-4": {
+      "Artprima\\PrometheusMetricsBundle\\": "./"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\Artprima\\PrometheusMetricsBundle\\": "Tests/"
+    }
+  }
+}

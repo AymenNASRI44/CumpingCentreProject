@@ -406,6 +406,14 @@ return [[
 '[C]App%5CEntity%5CUser%24reservations' => 1,
 'App%5CEntity%5CUser%24id_region' => 0,
 '[C]App%5CEntity%5CUser%24id_region' => 1,
+'Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController' => 0,
+'[C]Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController' => 1,
+'Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController%23__construct' => 0,
+'[C]Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController%23__construct' => 1,
+'Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController%23prometheus' => 0,
+'[C]Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController%23prometheus' => 1,
+'Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController%24renderer' => 0,
+'[C]Artprima%5CPrometheusMetricsBundle%5CController%5CMetricsController%24renderer' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -1158,6 +1166,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1741736101,
+1 => 1745579659,
 
 ]];
