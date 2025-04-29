@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        COMPOSE_CMD = 'docker compose' // ou 'docker-compose' selon ta version
+        COMPOSE_CMD = 'docker-compose' // ou 'docker-compose' selon ta version
     }
 
     stages {
