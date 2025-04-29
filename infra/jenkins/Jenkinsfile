@@ -7,18 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Préparation') {
-            steps {
-                script {
-                // balla3 
-                    sh 'ls -l docker compose.yml'
-                    
-                   
-                    sh "${COMPOSE_CMD} config"
-                }
-            }
-        }
-
         stage('Run Conteneurs') {
             steps {
                 script {
