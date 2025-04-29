@@ -2,36 +2,42 @@ pipeline {
     agent any
 
     environment {
-        COMPOSE_CMD = 'docker-compose' // ou 'docker-compose' selon ta version
+        COMPOSE_CMD = 'docker compose' // ou 'docker-compose'
+        PROJECT_PATH = '/projetC'
     }
 
     stages {
-
-        stage('Démarrage des conteneurs') {
+        stage('Run Conteneurs') {
             steps {
-                script {
-                    echo "🚀 Lancement des conteneurs en mode détaché..."
-                    sh "${COMPOSE_CMD} up -d"
+                dir("${env.PROJECT_PATH}") {
+                    script {
+                        echo "🚀 Lancement des conteneurs..."
+                        sh "${COMPOSE_CMD} up -d"
+                    }
                 }
             }
         }
 
-        stage('Tests Symfony') {
+        stage('Tests') {
             steps {
-                script {
-                    echo "🧪 Exécution des tests Symfony..."
-                    sh "${COMPOSE_CMD} exec -T app php bin/console doctrine:migrations:migrate --no-interaction"
-                    sh "${COMPOSE_CMD} exec -T app php bin/phpunit"
+                dir("${env.PROJECT_PATH}") {
+                    script {
+                        echo "🧪 Lancement des tests Symfony..."
+                        sh "${COMPOSE_CMD} exec -T app php bin/console doctrine:migrations:migrate --no-interaction"
+                        sh "${COMPOSE_CMD} exec -T app php bin/phpunit"
+                    }
                 }
             }
         }
 
         stage('Déploiement') {
             steps {
-                script {
-                    echo "🔁 Redémarrage des conteneurs avec reconstruction..."
-                    sh "${COMPOSE_CMD} down"
-                    sh "${COMPOSE_CMD} up -d --build"
+                dir("${env.PROJECT_PATH}") {
+                    script {
+                        echo "🔁 Reconstruction des conteneurs..."
+                        sh "${COMPOSE_CMD} down"
+                        sh "${COMPOSE_CMD} up -d --build"
+                    }
                 }
             }
         }
@@ -39,10 +45,10 @@ pipeline {
 
     post {
         failure {
-            echo "❌ Le déploiement a échoué. Consultez les logs pour plus d'informations."
+            echo "❌ Le déploiement a échoué."
         }
         success {
-            echo "✅ Déploiement terminé avec succès !"
+            echo "✅ Déploiement réussi !"
         }
     }
 }
