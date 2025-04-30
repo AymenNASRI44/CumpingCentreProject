@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+
+    environment {
+        COMPOSE_FILE = 'docker-compose.yaml'
+    }
+
+    stages {
+        stage('📥 Récupération du code') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('🐳 Build des conteneurs') {
+            steps {
+                sh 'docker-compose build'
+            }
+        }
+
+        stage('🚀 Lancement des services') {
+            steps {
+                sh 'docker-compose up -d'
+            }
+        }
+
+        stage('🧪 Installation des dépendances') {
+            steps {
+                sh 'docker-compose exec -T app composer install'
+            }
+        }
+
+        stage('🔍 Vérification de la base de données') {
+            steps {
+                sh 'docker-compose exec -T app php bin/console doctrine:schema:validate'
+            }
+        }
+
+        stage('🧪 Lancement des tests') {
+            steps {
+                sh 'docker-compose exec -T app ./vendor/bin/phpunit'
+            }
+        }
+
+        stage('🧹 Nettoyage (arrêt des conteneurs)') {
+            steps {
+                sh 'docker-compose down'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Pipeline exécutée avec succès !'
+        }
+        failure {
+            echo '❌ Échec de la pipeline. Vérifiez les logs.'
+            sh 'docker-compose down' // Assure que tout s'arrête même si une étape échoue
+        }
+    }
+}
